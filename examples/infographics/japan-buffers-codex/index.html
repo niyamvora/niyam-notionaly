@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Japan rewards buffers — poster infographic</title>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#231F20;
+  --tint:rgba(35,31,32,.20);
+  --tint-8:rgba(35,31,32,.08);
+  --paper:#FFFFFF;
+  --font:ui-sans-serif,-apple-system,"Inter","Helvetica Neue",Arial,sans-serif;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
+  --canvas-w:1200px; --margin:80px; --gutter:24px; --scale:1;
+}
+body[data-preset="slide"]{ --canvas-w:1920px; --margin:96px; --gutter:32px; --scale:1.4; }
+body[data-preset="social"]{ --canvas-w:1080px; --margin:72px; --gutter:24px; --scale:.9; }
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  width:var(--canvas-w); margin:0 auto; background:var(--paper); color:var(--ink);
+  font-family:var(--font); font-size:calc(18px*var(--scale)); line-height:1.55;
+  padding:var(--s6) var(--margin);
+  -webkit-font-smoothing:antialiased;
+}
+body[data-preset="slide"]{ height:1080px; padding:var(--margin); display:flex; flex-direction:column; justify-content:center; }
+body[data-preset="social"]{ min-height:1080px; display:flex; flex-direction:column; justify-content:center; }
+
+/* ============ TYPE ============ */
+.display{ font-size:calc(64px*var(--scale)); font-weight:700; letter-spacing:-.02em; line-height:1.05; margin:0 0 var(--s3); }
+.section-title{ font-size:calc(32px*var(--scale)); font-weight:700; letter-spacing:-.01em; line-height:1.15; margin:0 0 var(--s3); }
+.body{ font-size:calc(18px*var(--scale)); margin:0 0 var(--s2); max-width:70ch; }
+.label{ font-size:calc(14px*var(--scale)); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin:0 0 var(--s1); }
+.source{ font-size:calc(12px*var(--scale)); color:rgba(35,31,32,.6); margin-top:var(--s5); }
+.num{ font-variant-numeric:tabular-nums; }
+
+/* ============ LAYOUT ============ */
+.section{ margin-bottom:var(--s6); }
+body[data-preset="social"] .section{ margin-bottom:var(--s5); }
+.rule{ height:1px; background:var(--tint); border:0; margin:0 0 var(--s4); }
+.grid{ display:grid; gap:var(--gutter); }
+.cols-2{ grid-template-columns:repeat(2,1fr); }
+.cols-3{ grid-template-columns:repeat(3,1fr); }
+.hero{ display:grid; grid-template-columns:1fr .8fr; gap:var(--s4); align-items:center; }
+.section-framed{ display:grid; grid-template-columns:1fr 160px; gap:var(--s4); align-items:end; }
+
+/* ============ ILLUSTRATION ============ */
+.illus{ display:block; width:100%; height:auto; }
+.illus--spot{ width:calc(160px*var(--scale)); }
+.illus--corner{ width:calc(200px*var(--scale)); }
+
+/* ============ STAT TILE ============ */
+.stat .stat-num{ font-size:calc(88px*var(--scale)); font-weight:700; letter-spacing:-.03em; line-height:1; font-variant-numeric:tabular-nums; margin:0 0 var(--s1); white-space:nowrap; }
+.stat .stat-num--range{ font-size:calc(61px*var(--scale)); line-height:1.25; }
+.stat .body{ margin:0; }
+
+/* ============ BARS ============ */
+.bars{ display:flex; flex-direction:column; gap:var(--s2); }
+.bar-row{ display:grid; grid-template-columns:minmax(120px,22%) 1fr auto; gap:var(--s2); align-items:center; }
+.bar-label{ font-size:calc(14px*var(--scale)); font-weight:500; }
+.bar-track{ height:calc(32px*var(--scale)); background:var(--tint-8); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; background:var(--ink); border-radius:2px; }
+.bar-fill--alt{ background:var(--tint); }
+.bar-value{ font-size:calc(14px*var(--scale)); font-weight:500; font-variant-numeric:tabular-nums; }
+
+/* ============ NODE DIAGRAM ============ */
+.nodes{ display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+.node{ border:1.75px solid var(--ink); background:var(--tint-8); border-radius:8px; padding:var(--s2) var(--s3); font-size:calc(14px*var(--scale)); font-weight:500; }
+.connector{ width:var(--s4); height:1.75px; background:var(--ink); flex:0 0 auto; }
+
+@media print{ @page{ margin:0; } body{ width:auto; } }
+</style>
+</head>
+<body data-preset="poster">
+  <section class="section hero">
+    <div>
+      <p class="label">Planning a trip to Japan</p>
+      <h1 class="display">Japan doesn't reward itineraries.<br>It rewards buffers.</h1>
+      <p class="body">Trips don't fall apart at the attractions. They fall apart in the seams between them.</p>
+    </div>
+    <img class="illus" src="illustrations/01-hero.svg" alt="A traveller walking with a suitcase">
+  </section>
+
+  <section class="section">
+    <div class="grid cols-3">
+      <div class="stat">
+        <p class="label">Last train, Tokyo</p>
+        <p class="stat-num stat-num--range">12:00–12:40<span style="font-size:.4em">am</span></p>
+        <p class="body">A typical final window, not a suggestion. Miss it and the article's example is a &yen;9,000 taxi.</p>
+      </div>
+      <div class="stat">
+        <p class="label">Luggage forwarding</p>
+        <p class="stat-num stat-num--range">&yen;2,000–2,500</p>
+        <p class="body">Takky&umacr;bin sends your case ahead. A transfer day becomes a normal day.</p>
+      </div>
+      <div class="stat">
+        <p class="label">Kyoto day trips</p>
+        <p class="stat-num"><span style="font-size:.4em">under</span> 90<span style="font-size:.4em">min</span></p>
+        <p class="body">Nara, Osaka, Himeji, Uji and Kobe. One base, six ways.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-framed">
+    <div>
+      <h2 class="section-title">Split your days before you fill them</h2>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-label">Anchor days</span>
+          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+          <span class="bar-value">~50%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Drift days</span>
+          <div class="bar-track"><div class="bar-fill bar-fill--alt" style="width:50%"></div></div>
+          <span class="bar-value">~50%</span>
+        </div>
+      </div>
+      <p class="body" style="margin-top:24px">Anchor days have one fixed booking. Drift days have nothing booked, so nothing can be late. A good two-week trip is roughly half and half.</p>
+    </div>
+    <img class="illus illus--spot" src="illustrations/02-calendar.svg" alt="">
+  </section>
+
+  <section class="section section-framed">
+    <div>
+      <h2 class="section-title">Where a day actually breaks</h2>
+      <div class="nodes">
+        <div class="node">Late start</div>
+        <div class="connector"></div>
+        <div class="node">Elastic hours</div>
+        <div class="connector"></div>
+        <div class="node">Last train</div>
+      </div>
+      <p class="body" style="margin-top:24px">Protect the morning and the last train. Let everything between them bend.</p>
+    </div>
+    <img class="illus illus--spot" src="illustrations/03-clock.svg" alt="">
+  </section>
+
+  <p class="source">Source: &ldquo;Japan Doesn't Reward Itineraries. It Rewards Buffers.&rdquo; Figures and recommendations are quoted or summarized from the supplied article.</p>
+</body>
+</html>

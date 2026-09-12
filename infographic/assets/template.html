@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Infographic</title>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#231F20;
+  --tint:rgba(35,31,32,.20);
+  --tint-8:rgba(35,31,32,.08);
+  --paper:#FFFFFF;
+  /* Colourful mode ONLY: uncomment and use for data marks. Never for body type. */
+  /* --accent:#D9730D; */
+  --font:ui-sans-serif,-apple-system,"Inter","Helvetica Neue",Arial,sans-serif;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
+  --canvas-w:1200px; --margin:80px; --gutter:24px; --scale:1;
+}
+/* poster = default. Notion embed: set --canvas-w:900px */
+body[data-preset="slide"]{ --canvas-w:1920px; --margin:96px; --gutter:32px; --scale:1.4; }
+body[data-preset="social"]{ --canvas-w:1080px; --margin:72px; --gutter:24px; --scale:.9; }
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  width:var(--canvas-w); margin:0 auto; background:var(--paper); color:var(--ink);
+  font-family:var(--font); font-size:calc(18px*var(--scale)); line-height:1.55;
+  padding:var(--s6) var(--margin);
+  -webkit-font-smoothing:antialiased;
+}
+body[data-preset="slide"]{ height:1080px; padding:var(--margin); display:flex; flex-direction:column; justify-content:center; }
+body[data-preset="social"]{ min-height:1080px; display:flex; flex-direction:column; justify-content:center; }
+
+/* ============ TYPE ============ */
+.display{ font-size:calc(64px*var(--scale)); font-weight:700; letter-spacing:-.02em; line-height:1.05; margin:0 0 var(--s3); }
+.section-title{ font-size:calc(32px*var(--scale)); font-weight:700; letter-spacing:-.01em; line-height:1.15; margin:0 0 var(--s3); }
+.body{ font-size:calc(18px*var(--scale)); margin:0 0 var(--s2); max-width:70ch; }
+.label{ font-size:calc(14px*var(--scale)); font-weight:500; text-transform:uppercase; letter-spacing:.06em; margin:0 0 var(--s1); }
+.source{ font-size:calc(12px*var(--scale)); color:rgba(35,31,32,.6); margin-top:var(--s5); }
+.num{ font-variant-numeric:tabular-nums; }
+
+/* ============ LAYOUT ============ */
+.section{ margin-bottom:var(--s6); }
+body[data-preset="social"] .section{ margin-bottom:var(--s5); }
+.rule{ height:1px; background:var(--tint); border:0; margin:0 0 var(--s4); }
+.grid{ display:grid; gap:var(--gutter); }
+.cols-2{ grid-template-columns:repeat(2,1fr); }
+.cols-3{ grid-template-columns:repeat(3,1fr); }
+.hero{ display:grid; grid-template-columns:1fr .8fr; gap:var(--s4); align-items:center; margin-bottom:var(--s5); }
+.hero .illus{ width:100%; max-width:calc(420px*var(--scale)); margin-inline:auto; }
+
+/* ============ ILLUSTRATION ============ */
+/* Transparent mono assets. Never behind text, never faded. */
+.illus{ display:block; width:100%; height:auto; }
+.illus--spot{ width:calc(160px*var(--scale)); }
+.illus--corner{ width:calc(200px*var(--scale)); }
+
+/* ============ ILLUSTRATED STAT TILE ============ */
+/* The default stat tile. Every tile carries its own illustration. */
+.stat-illus{ width:calc(168px*var(--scale)); height:calc(168px*var(--scale)); display:block; margin:calc(-18px*var(--scale)) 0 calc(-6px*var(--scale)) calc(-20px*var(--scale)); }
+
+/* ============ SPLIT: illustration beside a text block ============ */
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s4); align-items:center; }
+.split--art-left{ grid-template-columns:.85fr 1fr; }
+.split--art-right{ grid-template-columns:1fr .85fr; }
+.split .illus{ width:100%; max-width:calc(360px*var(--scale)); }
+
+/* ============ BAND: full-width row of small illustrations ============ */
+.band{ display:flex; justify-content:space-between; align-items:flex-end; gap:var(--gutter); }
+.band figure{ margin:0; flex:1; text-align:center; }
+.band img{ width:calc(120px*var(--scale)); height:calc(120px*var(--scale)); }
+.band figcaption{ font-size:calc(14px*var(--scale)); font-weight:500; margin-top:var(--s1); }
+
+/* ============ STAT TILE ============ */
+.stat .stat-num{ font-size:calc(88px*var(--scale)); font-weight:700; letter-spacing:-.03em; line-height:1; font-variant-numeric:tabular-nums; margin:0 0 var(--s1); }
+.stat .body{ margin:0; }
+
+/* ============ BARS ============ */
+.bars{ display:flex; flex-direction:column; gap:var(--s2); }
+.bar-row{ display:grid; grid-template-columns:minmax(120px,22%) 1fr auto; gap:var(--s2); align-items:center; }
+.bar-label{ font-size:calc(14px*var(--scale)); font-weight:500; }
+.bar-track{ height:calc(32px*var(--scale)); background:var(--tint-8); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; background:var(--ink); border-radius:2px; }
+.bar-fill--alt{ background:var(--tint); }        /* second series, mono mode */
+.bar-fill--accent{ background:var(--accent,var(--ink)); }
+.bar-value{ font-size:calc(14px*var(--scale)); font-weight:500; font-variant-numeric:tabular-nums; }
+
+/* ============ NODE DIAGRAM ============ */
+/* The style's own device. Real type inside nodes — "..." is only for generated artwork. */
+.nodes{ display:flex; align-items:center; gap:0; flex-wrap:wrap; }
+.node{
+  border:1.75px solid var(--ink); background:var(--tint-8); border-radius:8px;
+  padding:var(--s2) var(--s3); font-size:calc(14px*var(--scale)); font-weight:500;
+}
+.connector{ width:var(--s4); height:1.75px; background:var(--ink); flex:0 0 auto; }
+
+/* ============ PRINT ============ */
+@media print{
+  @page{ margin:0; }
+  body{ width:auto; }
+}
+</style>
+</head>
+
+<!-- data-preset: "poster" (default) | "slide" | "social" -->
+<body data-preset="poster">
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div>
+      <p class="label">Kicker</p>
+      <h1 class="display">The one headline, two lines at most</h1>
+      <p class="body">One sentence of context. Say the point, not the methodology.</p>
+    </div>
+    <img class="illus" src="illustrations/01-hero.png" alt="">
+  </section>
+
+  <!-- STAT ROW -->
+  <section class="section">
+    <div class="grid cols-3">
+      <div class="stat">
+        <img class="stat-illus" src="illustrations/02-spot.svg" alt="">
+        <p class="label">Label</p>
+        <p class="stat-num">72%</p>
+        <p class="body">What it means.</p>
+      </div>
+      <div class="stat">
+        <img class="stat-illus" src="illustrations/03-spot.svg" alt="">
+        <p class="label">Label</p>
+        <p class="stat-num">3.4x</p>
+        <p class="body">What it means.</p>
+      </div>
+      <div class="stat">
+        <img class="stat-illus" src="illustrations/04-spot.svg" alt="">
+        <p class="label">Label</p>
+        <p class="stat-num">18</p>
+        <p class="body">What it means.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARS -->
+  <section class="section">
+    <h2 class="section-title">Ranked comparison</h2>
+    <div class="bars">
+      <div class="bar-row">
+        <span class="bar-label">First</span>
+        <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+        <span class="bar-value">72%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Second</span>
+        <div class="bar-track"><div class="bar-fill bar-fill--alt" style="width:31%"></div></div>
+        <span class="bar-value">31%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT: art beside text -->
+  <section class="section split split--art-right">
+    <div>
+      <h2 class="section-title">A point that needs a picture</h2>
+      <p class="body">Two or three sentences. The illustration carries the idea; the text names it.</p>
+    </div>
+    <img class="illus" src="illustrations/05-spot.svg" alt="">
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <h2 class="section-title">How it flows</h2>
+    <div class="nodes">
+      <div class="node">Step one</div>
+      <div class="connector"></div>
+      <div class="node">Step two</div>
+      <div class="connector"></div>
+      <div class="node">Step three</div>
+    </div>
+  </section>
+
+  <p class="source">Source: …</p>
+</body>
+</html>

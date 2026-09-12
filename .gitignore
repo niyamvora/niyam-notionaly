@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# Third-party calibration references are NOT redistributed.
+# They are other people's artwork, kept locally only. See skill/NOTICE.md.
+skill/assets/reference/**/*.png
+skill/assets/reference/**/*.jpg
+skill/assets/reference/**/*.svg
+
+# Export intermediates
+**/raw.png

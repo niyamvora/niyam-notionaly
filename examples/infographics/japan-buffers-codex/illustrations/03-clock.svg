@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="A hand-drawn clock marking a firm departure time">
+  <g fill="none" stroke="#231F20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 117 C59 76 84 51 120 50 C158 49 184 77 184 119 C184 159 158 187 120 188 C83 188 56 159 58 117 Z" stroke-width="8"/>
+    <path d="M121 75 C120 91 121 106 120 120 L151 141" stroke-width="8"/>
+    <path d="M80 44 C70 48 63 55 57 65 M160 43 C171 48 179 56 184 66" stroke-width="7"/>
+    <path d="M92 190 L82 205 M149 190 L158 204" stroke-width="8"/>
+  </g>
+  <g fill="#231F20">
+    <circle cx="120" cy="120" r="8"/><circle cx="34" cy="119" r="4"/><circle cx="205" cy="116" r="5"/>
+    <path d="M31 87 l15 5 M196 83 l14 -6 M42 155 l13 -6 M190 155 l13 8" stroke="#231F20" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

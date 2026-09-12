@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="A hand-drawn calendar with one flexible day">
+  <g fill="none" stroke="#231F20" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M49 63 C48 55 54 49 63 49 L179 49 C188 49 193 55 192 64 L188 183 C188 191 182 196 174 195 L62 192 C53 192 48 186 49 177 Z" stroke-width="7"/>
+    <path d="M50 83 C84 80 150 85 190 81" stroke-width="6"/>
+    <path d="M79 38 C79 49 78 59 79 69 M160 38 C161 50 160 60 160 70" stroke-width="8"/>
+    <path d="M75 111 L92 111 M112 111 L128 111 M150 111 L166 111 M74 139 L90 139 M113 139 L129 139" stroke-width="7"/>
+    <path d="M148 137 C154 129 165 127 173 133 C181 139 180 151 172 158 C164 165 151 164 145 155" stroke-width="7"/>
+    <path d="M145 153 L143 166 L156 163" stroke-width="6"/>
+  </g>
+  <g fill="#231F20">
+    <circle cx="30" cy="111" r="4"/><circle cx="207" cy="97" r="5"/><circle cx="211" cy="157" r="3"/>
+    <path d="M24 142 l15 -5 M198 121 l17 -3 M33 78 l12 5" stroke="#231F20" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
