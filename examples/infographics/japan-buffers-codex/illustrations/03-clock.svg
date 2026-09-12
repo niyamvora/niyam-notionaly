@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="A hand-drawn clock marking a firm departure time">
+  <rect id="bg" width="240" height="240" fill="#FFFFFF"/>
   <g fill="none" stroke="#231F20" stroke-linecap="round" stroke-linejoin="round">
     <path d="M58 117 C59 76 84 51 120 50 C158 49 184 77 184 119 C184 159 158 187 120 188 C83 188 56 159 58 117 Z" stroke-width="8"/>
     <path d="M121 75 C120 91 121 106 120 120 L151 141" stroke-width="8"/>

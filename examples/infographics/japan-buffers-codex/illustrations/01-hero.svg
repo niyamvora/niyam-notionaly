@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="A traveller walking with a suitcase">
+  <rect id="bg" width="1024" height="1024" fill="#FFFFFF"/>
   <g fill="#231F20">
     <path d="M250 700 h190 a14 14 0 0 1 14 14 v150 a14 14 0 0 1 -14 14 h-190 a14 14 0 0 1 -14 -14 v-150 a14 14 0 0 1 14 -14 z" fill="#FFFFFF" stroke="#231F20" stroke-width="9"/>
     <rect x="286" y="748" width="118" height="12" rx="6" fill="#231F20" fill-opacity=".2"/>

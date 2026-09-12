@@ -24,7 +24,7 @@ Render the PNG and **look at it** before delivering. Most of these are invisible
 
 - [ ] Mono unless the user asked for colour.
 - [ ] In colourful mode: one accent, on data marks only. Body type still `--ink`.
-- [ ] Illustrations are monochrome `#231F20`, transparent, not faded, not behind text.
+- [ ] Illustrations are monochrome `#231F20`, on white, not faded, not behind text.
 - [ ] Charts are clean geometry. No hand-drawn wobble on a data mark.
 - [ ] No gradients, shadows, bevels, 3D or pie charts.
 - [ ] Illustrations sit at edges and corners, not competing with the data.

@@ -116,8 +116,8 @@ set those specific paths to `fill="#231F20" fill-opacity="0.2"`.
 | Ask | Give them |
 |---|---|
 | "SVG" / "vector" / "editable" | `.svg` — hand-authored or traced |
-| "PNG" | `.png`, transparent background, 1024 or 2048 square |
-| "for Notion" | `.png` transparent at 1024 — Notion does not render uploaded SVG inline |
+| "PNG" | `.png`, solid white background, 1024 or 2048 square |
+| "for Notion" | `.png` at 1024 — Notion does not render uploaded SVG inline |
 | "for Figma" | `.svg` |
 | "for a website" | `.svg`, plus a `.png` fallback |
 | "icon set" | one `.svg` per icon, consistent 24 grid, plus a contact-sheet preview |

@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect id="bg" width="400" height="400" fill="#FFFFFF"/>
   <g fill="#231F20">
   <path d="M132.0 158.0 Q268.0 158.0 257.0 239.0 Q246.0 320.0 200.0 320.0 Q154.0 320.0 143.0 239.0 L132.0 158.0 Z" fill="#FFFFFF"/>
   <path d="M129.0 158.4 L151.0 320.4 157.0 319.6 L135.0 157.6 Z"/>

@@ -17,7 +17,7 @@ against opaque white shapes. Enormous emptiness. Friendly, ordinary, calm.
 Ink       #231F20    warm near-black — the ONLY colour in the artwork
 Tint      #231F20 at 15-25% opacity — every "grey" is this, never a separate grey
 Fill      #FFFFFF    opaque white, used to make shapes sit on top of each other
-Ground    transparent (export) / pure white (in use)
+Ground    #FFFFFF    solid white, filling the canvas
 ```
 
 There is no second colour. No blue, no beige, no accent. Measured across 13 assets: 100%
@@ -39,7 +39,10 @@ If the canvas looks more than about a fifth covered in ink, it is too heavy. Del
 ## Canvas
 
 - **1:1 square**, 1040x1040 reference (any square size is fine; 1024 or 1200 are good).
-- Transparent background for assets. White only when flattening for a specific use.
+- **Solid white background.** The measured source libraries ship transparent PNGs, but this
+  project outputs white by default: transparent assets show as a checkerboard in most file
+  viewers and vanish against dark backgrounds. If you specifically need to composite over a
+  colour, ask for transparent and the rule flips — nothing else about the style changes.
 - No frame, no border, no background scene, no ground plane, no horizon.
 
 ## Line quality

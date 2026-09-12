@@ -19,7 +19,7 @@ So it splits in two:
 | Layer | Built with |
 |---|---|
 | Layout, headlines, labels, numbers, charts | HTML + CSS — real, selectable, exact |
-| Spot illustrations, framing figures | `niyam-notionaly-illustrations` → transparent mono PNG/SVG |
+| Spot illustrations, framing figures | `niyam-notionaly-illustrations` → white-background mono PNG/SVG |
 
 ## Read as needed
 
@@ -65,7 +65,7 @@ decoration.
 
 ### 4. Generate the illustrations
 
-Hand off to **`niyam-notionaly-illustrations`** (this skill's parent), one asset per call, transparent background. Save
+Hand off to **`niyam-notionaly-illustrations`** (this skill's parent), one asset per call, solid white background. Save
 to the workspace:
 
 ```text

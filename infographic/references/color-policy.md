@@ -56,7 +56,7 @@ If the user explicitly wants tinted artwork, recolour rather than regenerate —
 are single-ink, so it is a one-line change:
 
 ```css
-/* PNG: tint a transparent mono asset */
+/* PNG: tint a mono asset */
 .illus { filter: brightness(0) saturate(100%)
          invert(47%) sepia(89%) saturate(1200%) hue-rotate(2deg); }
 ```

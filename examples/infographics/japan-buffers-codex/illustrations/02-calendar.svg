@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="A hand-drawn calendar with one flexible day">
+  <rect id="bg" width="240" height="240" fill="#FFFFFF"/>
   <g fill="none" stroke="#231F20" stroke-linecap="round" stroke-linejoin="round">
     <path d="M49 63 C48 55 54 49 63 49 L179 49 C188 49 193 55 192 64 L188 183 C188 191 182 196 174 195 L62 192 C53 192 48 186 49 177 Z" stroke-width="7"/>
     <path d="M50 83 C84 80 150 85 190 81" stroke-width="6"/>

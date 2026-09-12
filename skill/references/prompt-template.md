@@ -21,7 +21,7 @@ below and aggressively drop detail it has no room for: background, texture, patt
 props, clutter. A redraw is an interpretation, not a tracing. If nothing is attached, draw
 the Theme line instead.
 
-A single hand-drawn Notion-style line illustration on a fully transparent background.
+A single hand-drawn Notion-style line illustration on a solid pure white background.
 
 Ink and colour:
 Strictly monochrome. One warm near-black ink, hex #231F20, and nothing else. No colour of
@@ -63,7 +63,7 @@ Adult, about 6.5 heads tall, narrow shoulders, simple tube limbs, mitten hands w
 two finger separations, small black wedge shoes. Not chibi, not a mascot.
 
 Format:
-Square 1:1, 1024x1024, transparent background, PNG.
+Square 1:1, 1024x1024, solid white background, PNG.
 
 Avoid:
 Colour, pure black, gradients, shadows, textures, backgrounds, ground lines, frames,
@@ -79,7 +79,7 @@ Add exactly one short line, once, never repeated on later images:
 
 **Remove something:**
 ```text
-Edit the provided image. Remove only {the thing} and fill that area with clean transparent
+Edit the provided image. Remove only {the thing} and fill that area with clean white
 background. Preserve everything else exactly: line weight, ink colour, composition, figure
 proportions, accent marks, aspect ratio. Add nothing new.
 ```

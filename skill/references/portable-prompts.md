@@ -24,7 +24,7 @@ worse than no ask at all.
 
 | Tool | Generates | Use |
 |---|---|---|
-| **ChatGPT** | Raster PNG | Best all-rounder. Honours transparent background. Attach references. |
+| **ChatGPT** | Raster PNG | Best all-rounder. Attach references. |
 | **Gemini** | Raster PNG | Strongest at matching an attached reference and at iterative editing. |
 | **Claude** | **No raster images** — writes SVG code | Use the SVG prompt. Real vector out, renders in the artifact. |
 
@@ -84,9 +84,10 @@ A small curved mouth. No pupils, no blush, no eyelashes, no teeth.
 ACCENTS: Eight to ten tiny filled dots and short dashes scattered asymmetrically around the
 figure, plus two or three small tick lines near the head.
 
-BACKGROUND: Fully transparent. No scenery, no ground line, no frame, no border.
+BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
+scenery, no ground line, no frame, no border.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 
 DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
@@ -125,7 +126,8 @@ Write me a single SVG illustration in Notion/Notioly style. Output only the SVG 
 SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
 
 SPEC:
-- viewBox="0 0 1024 1024", no width/height attributes, transparent background.
+- viewBox="0 0 1024 1024", no width/height attributes. First element must be
+  <rect width="1024" height="1024" fill="#FFFFFF"/> so the canvas is solid white.
 - One ink colour only: #231F20. No other colour. Never #000000.
 - Mid-tones are the same ink with fill-opacity="0.2". Never a separate grey hex.
 - Opaque #FFFFFF fills where shapes must overlap.
@@ -204,4 +206,4 @@ which is both a worse result and someone else's drawing.
 | Looks like clip art | `Redraw the linework with a tapered brush pen — strokes swelling in the middle, thinning to a point at both ends, slight hand-drawn wobble. Remove all uniform-width strokes.` |
 | Stiff pose | `Same character, but put the weight on one hip, twist the torso, and catch the figure mid-motion with a trailing leg.` |
 | Flat / floaty | `Add one or two solid black masses — fill the hair and the trousers solid black — to anchor the composition.` |
-| Added a background | `Remove the background, ground line and frame entirely. Transparent background, figure floating.` |
+| Added a background | `Remove the scenery, ground line and frame entirely. Keep a plain solid white background, figure floating.` |

@@ -43,6 +43,7 @@ Mono is the default and needs no change. For colourful mode, uncomment `--accent
 - Every number that sits in a column gets `font-variant-numeric:tabular-nums` (the `.num`
   class, already applied inside `.stat-num` and `.bar-value`).
 - Illustrations are `<img>` with `alt=""` when decorative, or real alt text when they carry
-  meaning. Never a CSS background — they must stay transparent and unfaded.
+  meaning. Never a CSS background — they must sit on the page unfaded. Their white ground
+  matches the page, so no seam shows.
 - Do not add a web font unless asked. The system stack matches Notion closely and needs no
   network fetch, which also keeps headless export deterministic.

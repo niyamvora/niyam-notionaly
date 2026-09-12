@@ -6,7 +6,7 @@
 [![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts)
 
 **Codex skills that draw in a monochrome, hand-drawn, Notion-like style** — one ink, tapered
-brush linework, transparent background — and compose those illustrations into infographics.
+brush linework, solid white background — and compose those illustrations into infographics.
 
 <table>
 <tr>
@@ -18,7 +18,7 @@ brush linework, transparent background — and compose those illustrations into 
 
 | Skill | Folder | Makes |
 |---|---|---|
-| `niyam-notionaly-illustrations` | [`skill/`](skill/) | Illustrations, characters, icons, spot marks — SVG or transparent PNG |
+| `niyam-notionaly-illustrations` | [`skill/`](skill/) | Illustrations, characters, icons, spot marks — SVG or PNG |
 | `niyam-notionaly-infographic` | [`infographic/`](infographic/) | Data posters, 16:9 slides, square social cards |
 
 ---
@@ -35,7 +35,8 @@ sources inspected to see how the linework is really built.
 - **Ink covers 6–16% of the canvas.** The drawing is overwhelmingly empty.
 - **Linework is filled paths, never strokes** — SVG has no variable-width stroke, so a
   tapered line has to be a closed filled shape.
-- **Background transparent**, canvas square.
+- **Solid white background**, canvas square. (The source libraries ship transparent; this
+  project outputs white, because transparent assets show as a checkerboard in most viewers.)
 
 ### What the cross-source comparison showed
 
@@ -165,121 +166,51 @@ Each prompt carries four things beyond the style spec:
 ### 1 — Raster (ChatGPT / Gemini)
 
 ```text
-Niyam's Notionaly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
+SUBJECT: A person sitting at a desk working at a laptop, seen straight on from the front.
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+COMPOSITION: Square-on camera, but the figure is NOT symmetrical. Head tilted slightly to
+one side. One shoulder a little higher than the other. One hand resting on the laptop, the
+other raised to the chin, thinking. The laptop is seen from behind, so only the back of the
+screen faces us — a simple rounded rectangle, no visible display, no text. A mug sits to one
+side, off-centre. No desk surface is drawn; the laptop and mug simply align on an invisible
+horizontal, with at most one short broken line under the laptop.
 
-IF I ATTACHED AN IMAGE:
-Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
-anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
-features. Translate everything else into the style below, and aggressively drop detail the
-style has no room for — background, texture, pattern, small props, clutter. A redraw is an
-interpretation, not a tracing.
+FIGURE: One person. Voluminous curly hair as a solid black silhouette with a few white
+curls cut into it. Skin left white. White loose shirt with an outlined collar and one small
+button detail. Sleeves pushed to the elbow.
 
-If I attached nothing, draw the SUBJECT line instead.
+VALUE ANCHORS: Solid black on the hair and on the back of the laptop screen. Everything
+else white with a black outline. The mug stays white.
 
-Draw a single hand-drawn Notion-style line illustration. Follow this spec exactly.
-
-SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
-
-INK: Strictly monochrome. One warm near-black, hex #231F20, and nothing else. No colour
-anywhere. Every mid-tone is that same ink at about 20% opacity, never a separate grey.
-Opaque white fills where shapes overlap. Never use pure black #000000.
-
-LINE: Hand-drawn with a tapered brush pen — strokes swell in the middle and thin to a point
-at each end. Slight confident wobble. Rounded terminals. Open contours with small
-deliberate gaps. No hatching, texture, shadow, gradient or glow. Not uniform monoline.
-
-DENSITY: Very sparse. Ink covers only about 10% of the canvas. The subject is centred and
-fills roughly 60% of the frame, with a generous empty margin on all four sides. Nothing
-touches the edge.
-
-VALUE: Anchor the composition with one or two solid black masses — normally the hair and
-the trousers or skirt. Everything else is white with a black outline. Never fill garments
-with grey.
-
-FIGURE: Adult proportions, about 6.5 heads tall. Narrow shoulders, simple tube limbs,
-mitten hands with one or two finger separations, small solid-black wedge shoes. Generous,
-specific hair drawn as a confident filled silhouette with a few white curls cut into it.
-Not chibi, not a mascot, no oversized head.
-
-FACE: Almost empty. Eyes are two short downward arcs, closed and content. A tiny hook nose.
-A small curved mouth. No pupils, no blush, no eyelashes, no teeth.
-
-ACCENTS: Eight to ten tiny filled dots and short dashes scattered asymmetrically around the
-figure, plus two or three small tick lines near the head.
-
-BACKGROUND: Fully transparent. No scenery, no ground line, no frame, no border.
-
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
-
-DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
-lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
-3D, isometric, or any text or lettering in the image.
-
-AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ### 2 — SVG (Claude, or any model, for real vector)
 
 ```text
-Niyam's Notionaly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
+SUBJECT: A family of four sharing dinner around a table, seen from the side of the table so
+all four are visible.
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+CANVAS: Landscape 4:3, not square — four figures need the width.
 
-IF I ATTACHED AN IMAGE:
-Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
-anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
-features. Translate everything else into the style below, and aggressively drop detail the
-style has no room for — background, texture, pattern, small props, clutter. A redraw is an
-interpretation, not a tracing.
+COMPOSITION: Two adults and two children seated around a simple oval table seen at a low
+angle. Figures OVERLAP each other slightly; never space them out in a straight line. Vary
+the heights — the children sit lower. The table is a single clean elliptical edge filled at
+20% ink, with three or four small plain circles for plates and two simple glasses. No food
+detail, no patterns, no cutlery clutter. One person is mid-gesture, reaching or passing
+something across the table, to give the scene an action.
 
-If I attached nothing, draw the SUBJECT line instead.
+FIGURE: Four people, seated, so only heads, torsos and arms are visible. Alternate the
+value scheme so they read apart:
+  - Adult 1: long black hair as a solid mass, skin white, WHITE top.
+  - Adult 2: short black hair, skin at 20% ink, SOLID BLACK top with a white collar.
+  - Child 1: black topknot, skin white, SOLID BLACK top.
+  - Child 2: curly black hair, skin at 20% ink, WHITE top with one thin stripe detail.
 
-Write me a single SVG illustration in Notion/Notioly style. Output only the SVG code.
+VALUE ANCHORS: The legs are hidden, so the black comes from the four hair masses plus the
+two black tops. Do not let all four wear white — the composition will go flat and grey.
 
-SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
-
-SPEC:
-- viewBox="0 0 1024 1024", no width/height attributes, transparent background.
-- One ink colour only: #231F20. No other colour. Never #000000.
-- Mid-tones are the same ink with fill-opacity="0.2". Never a separate grey hex.
-- Opaque #FFFFFF fills where shapes must overlap.
-- Tapered strokes: do NOT use the stroke attribute for the linework. Draw each stroke as a
-  CLOSED FILLED PATH — an outward curve and a return curve meeting at a point at each end,
-  thickest through the middle third. Like this:
-  <path d="M12 96 C 26 44, 58 18, 96 14 C 60 26, 32 52, 20 98 Z" fill="#231F20"/>
-- Solid black masses for hair and for trousers or skirt. Everything else white with an
-  outlined contour.
-- Subject centred, occupying about 60% of the viewBox, generous margin on all sides,
-  nothing touching the edge.
-- 8-10 small filled dots and dashes scattered asymmetrically as accents.
-- Figure about 6.5 heads tall, narrow shoulders, tube limbs, mitten hands, black wedge
-  shoes. Face: two short downward arcs for closed eyes, tiny hook nose, small curved mouth.
-- No background rect, no frame, no ground line, no text, no filters, no gradients.
-
-Build the figure from 15-40 tapered filled paths plus the solid masses. Keep the path data
-readable with whole-number coordinates where you can.
-
-AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+OUTPUT: Landscape 4:3, 1365x1024, PNG on a solid white background.
 ```
 
 ### 3 — Icons (any model, SVG)
@@ -336,7 +267,7 @@ which is both a worse result and someone else's drawing.
 | Looks like clip art | `Redraw the linework with a tapered brush pen — strokes swelling in the middle, thinning to a point at both ends, slight hand-drawn wobble. Remove all uniform-width strokes.` |
 | Stiff pose | `Same character, but put the weight on one hip, twist the torso, and catch the figure mid-motion with a trailing leg.` |
 | Flat / floaty | `Add one or two solid black masses — fill the hair and the trousers solid black — to anchor the composition.` |
-| Added a background | `Remove the background, ground line and frame entirely. Transparent background, figure floating.` |
+| Added a background | `Remove the scenery, ground line and frame entirely. Keep a plain solid white background, figure floating.` |
 
 ---
 
@@ -388,8 +319,8 @@ Small curved mouth. No pupils, no blush, no eyelashes, no teeth.
 ACCENTS: Eight to ten tiny filled dots and short dashes scattered asymmetrically, plus two
 or three small tick lines near the head.
 
-BACKGROUND: Fully transparent. No scenery, no ground line, no frame, no furniture beyond
-what the subject names.
+BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
+scenery, no ground line, no frame, no furniture beyond what the subject names.
 
 DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
@@ -409,71 +340,6 @@ Front-on is the **hardest angle in this style** — symmetry kills it. The fix i
 symmetry deliberately in the pose while keeping the camera square.
 
 ```text
-SUBJECT: A person sitting at a desk working at a laptop, seen straight on from the front.
-
-COMPOSITION: Square-on camera, but the figure is NOT symmetrical. Head tilted slightly to
-one side. One shoulder a little higher than the other. One hand resting on the laptop, the
-other raised to the chin, thinking. The laptop is seen from behind, so only the back of the
-screen faces us — a simple rounded rectangle, no visible display, no text. A mug sits to one
-side, off-centre. No desk surface is drawn; the laptop and mug simply align on an invisible
-horizontal, with at most one short broken line under the laptop.
-
-FIGURE: One person. Voluminous curly hair as a solid black silhouette with a few white
-curls cut into it. Skin left white. White loose shirt with an outlined collar and one small
-button detail. Sleeves pushed to the elbow.
-
-VALUE ANCHORS: Solid black on the hair and on the back of the laptop screen. Everything
-else white with a black outline. The mug stays white.
-
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
-```
-
-*If it comes back stiff:* `Break the symmetry more — tilt the head further, drop one shoulder, and move the raised hand off centre. Keep the camera square-on.`
-
-</details>
-
-<details>
-<summary><b>2. Family of four at a dinner table</b></summary>
-
-The hardest of the set. Four figures fight the 10% ink budget, and seated bodies hide the
-trousers that normally carry the black. Expect two or three iterations.
-
-```text
-SUBJECT: A family of four sharing dinner around a table, seen from the side of the table so
-all four are visible.
-
-CANVAS: Landscape 4:3, not square — four figures need the width.
-
-COMPOSITION: Two adults and two children seated around a simple oval table seen at a low
-angle. Figures OVERLAP each other slightly; never space them out in a straight line. Vary
-the heights — the children sit lower. The table is a single clean elliptical edge filled at
-20% ink, with three or four small plain circles for plates and two simple glasses. No food
-detail, no patterns, no cutlery clutter. One person is mid-gesture, reaching or passing
-something across the table, to give the scene an action.
-
-FIGURE: Four people, seated, so only heads, torsos and arms are visible. Alternate the
-value scheme so they read apart:
-  - Adult 1: long black hair as a solid mass, skin white, WHITE top.
-  - Adult 2: short black hair, skin at 20% ink, SOLID BLACK top with a white collar.
-  - Child 1: black topknot, skin white, SOLID BLACK top.
-  - Child 2: curly black hair, skin at 20% ink, WHITE top with one thin stripe detail.
-
-VALUE ANCHORS: The legs are hidden, so the black comes from the four hair masses plus the
-two black tops. Do not let all four wear white — the composition will go flat and grey.
-
-OUTPUT: Landscape 4:3, 1365x1024, transparent PNG.
-```
-
-*If it comes back cluttered:* `Far sparser. Remove all food, cutlery and table detail — keep only the table edge, three plain circles and two glasses. Strip interior detail from the clothing. Enlarge the empty margin above the figures.`
-
-*If the figures blur together:* `Make the value alternation stronger — adult 2 and child 1 in solid black tops, adult 1 and child 2 in pure white tops with only an outline.`
-
-</details>
-
-<details>
-<summary><b>3. Person reading a newspaper</b></summary>
-
-```text
 SUBJECT: A person sitting cross-legged reading a large open newspaper.
 
 COMPOSITION: The newspaper is large and open, held up so it hides most of the torso — only
@@ -489,13 +355,18 @@ trousers folded in the cross-legged pose. Small black shoes, or bare feet.
 VALUE ANCHORS: Solid black on the hair and the crossed trousers, framing the large white
 newspaper in the middle. That white-black-white sandwich is the whole composition.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
+
+*If it comes back stiff:* `Break the symmetry more — tilt the head further, drop one shoulder, and move the raised hand off centre. Keep the camera square-on.`
 
 </details>
 
 <details>
-<summary><b>4. Person carrying a stack of books</b></summary>
+<summary><b>2. Family of four at a dinner table</b></summary>
+
+The hardest of the set. Four figures fight the 10% ink budget, and seated bodies hide the
+trousers that normally carry the black. Expect two or three iterations.
 
 ```text
 SUBJECT: A person walking mid-stride while carrying a tall stack of books.
@@ -511,13 +382,17 @@ Solid black tapered trousers. Small black wedge shoes.
 VALUE ANCHORS: Solid black on the hair, the trousers and the shoes. The book stack stays
 mostly white so it reads as the bright focal mass.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
+
+*If it comes back cluttered:* `Far sparser. Remove all food, cutlery and table detail — keep only the table edge, three plain circles and two glasses. Strip interior detail from the clothing. Enlarge the empty margin above the figures.`
+
+*If the figures blur together:* `Make the value alternation stronger — adult 2 and child 1 in solid black tops, adult 1 and child 2 in pure white tops with only an outline.`
 
 </details>
 
 <details>
-<summary><b>5. Two people collaborating over a laptop</b></summary>
+<summary><b>3. Person reading a newspaper</b></summary>
 
 ```text
 SUBJECT: Two colleagues leaning in together over a single laptop, one pointing at the screen.
@@ -534,13 +409,13 @@ FIGURE: Two people, seated.
 VALUE ANCHORS: Legs are hidden, so the black comes from both hair masses plus person 2's
 top. The opposing tops are what keep the two figures readable as separate people.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 </details>
 
 <details>
-<summary><b>6. Person watering a plant</b></summary>
+<summary><b>4. Person carrying a stack of books</b></summary>
 
 ```text
 SUBJECT: A person watering a large potted plant.
@@ -556,7 +431,49 @@ Solid black trousers. Barefoot.
 VALUE ANCHORS: Solid black on hair and trousers. The pot is filled at 20% ink. Leaves stay
 white with outlines so the plant reads light.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
+```
+
+</details>
+
+<details>
+<summary><b>5. Two people collaborating over a laptop</b></summary>
+
+```text
+SUBJECT: A person sitting at a laptop waving at the screen during a video call.
+
+COMPOSITION: Three-quarter view, so the laptop is partly turned and we see the back edge
+and a sliver of the open lid — no screen content, no interface, no text. One arm raised
+mid-wave, the other resting flat. Head tilted, shoulders relaxed. Two or three tick marks
+near the raised hand for motion.
+
+FIGURE: One person. Short cropped hair, solid black. Skin at 20% ink. White shirt with an
+outlined collar. Solid black trousers, only partly visible.
+
+VALUE ANCHORS: Solid black on the hair and the laptop lid.
+
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
+```
+
+</details>
+
+<details>
+<summary><b>6. Person watering a plant</b></summary>
+
+```text
+SUBJECT: A person curled up in an armchair holding a mug with both hands.
+
+COMPOSITION: Side view. Legs tucked up under them, shoulders rounded, head tipped slightly
+back — fully relaxed. The armchair is drawn with a minimum of strokes: one curved back, one
+seat line, one arm. Two or three small curls of steam rising from the mug.
+
+FIGURE: One person. Long wavy hair, solid black, falling over the chair back. Skin white.
+White oversized sweater with visible cuffs. Solid black leggings. Bare feet.
+
+VALUE ANCHORS: Solid black on the hair and the leggings. The armchair is filled at 20% ink
+so the white sweater lifts off it.
+
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 </details>
@@ -577,7 +494,7 @@ outlined collar. Solid black trousers, only partly visible.
 
 VALUE ANCHORS: Solid black on the hair and the laptop lid.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 </details>
@@ -598,7 +515,7 @@ White oversized sweater with visible cuffs. Solid black leggings. Bare feet.
 VALUE ANCHORS: Solid black on the hair and the leggings. The armchair is filled at 20% ink
 so the white sweater lifts off it.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 </details>
@@ -615,7 +532,7 @@ printed on them. So it splits:
 | Layer | Built with |
 |---|---|
 | Layout, headlines, labels, numbers, charts | Real HTML + CSS — selectable, exact, editable |
-| Spot illustrations | `niyam-notionaly-illustrations` → transparent mono assets |
+| Spot illustrations | `niyam-notionaly-illustrations` → white-ground mono assets |
 
 It follows that illustrations are hand-drawn and **charts are not** — a wobbly bar
 misrepresents its own data.
@@ -652,14 +569,14 @@ dependency. See [`infographic/`](infographic/) and
 │   └── references/                 layout, colour, data-viz, recipes, QA
 └── examples/
     ├── japan-buffers.md            the article the examples illustrate
-    ├── characters/ icons/ spots/   generated assets, transparent
+    ├── characters/ icons/ spots/   generated assets, white ground
     ├── gallery/                    white-backed copies, for this README
     ├── explorations/               same prompt across ChatGPT / Gemini / Codex
     └── infographics/               composed pages: HTML + illustrations + export
 ```
 
-Transparent assets are the deliverable; `gallery/` exists only because dark ink on a
-transparent background is invisible on GitHub's dark theme.
+`gallery/` holds resized copies of the same assets so this README loads quickly; the
+full-size originals live in `characters/`, `icons/` and `spots/`.
 
 ---
 

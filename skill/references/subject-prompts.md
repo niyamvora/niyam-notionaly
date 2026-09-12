@@ -53,8 +53,8 @@ Small curved mouth. No pupils, no blush, no eyelashes, no teeth.
 ACCENTS: Eight to ten tiny filled dots and short dashes scattered asymmetrically, plus two
 or three small tick lines near the head.
 
-BACKGROUND: Fully transparent. No scenery, no ground line, no frame, no furniture beyond
-what the subject names.
+BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
+scenery, no ground line, no frame, no furniture beyond what the subject names.
 
 DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
@@ -89,7 +89,7 @@ button detail. Sleeves pushed to the elbow.
 VALUE ANCHORS: Solid black on the hair and on the back of the laptop screen. Everything
 else white with a black outline. The mug stays white.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 *If it comes back stiff:* `Break the symmetry more — tilt the head further, drop one
@@ -125,7 +125,7 @@ value scheme so they read apart:
 VALUE ANCHORS: The legs are hidden, so the black comes from the four hair masses plus the
 two black tops. Do not let all four wear white — the composition will go flat and grey.
 
-OUTPUT: Landscape 4:3, 1365x1024, transparent PNG.
+OUTPUT: Landscape 4:3, 1365x1024, PNG on a solid white background.
 ```
 
 *If it comes back cluttered:* `Far sparser. Remove all food, cutlery and table detail —
@@ -155,7 +155,7 @@ trousers folded in the cross-legged pose. Small black shoes, or bare feet.
 VALUE ANCHORS: Solid black on the hair and the crossed trousers, framing the large white
 newspaper in the middle. That white-black-white sandwich is the whole composition.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ---
@@ -176,7 +176,7 @@ Solid black tapered trousers. Small black wedge shoes.
 VALUE ANCHORS: Solid black on the hair, the trousers and the shoes. The book stack stays
 mostly white so it reads as the bright focal mass.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ---
@@ -198,7 +198,7 @@ FIGURE: Two people, seated.
 VALUE ANCHORS: Legs are hidden, so the black comes from both hair masses plus person 2's
 top. The opposing tops are what keep the two figures readable as separate people.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ---
@@ -219,7 +219,7 @@ Solid black trousers. Barefoot.
 VALUE ANCHORS: Solid black on hair and trousers. The pot is filled at 20% ink. Leaves stay
 white with outlines so the plant reads light.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ---
@@ -239,7 +239,7 @@ outlined collar. Solid black trousers, only partly visible.
 
 VALUE ANCHORS: Solid black on the hair and the laptop lid.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
 ---
@@ -259,5 +259,5 @@ White oversized sweater with visible cuffs. Solid black leggings. Bare feet.
 VALUE ANCHORS: Solid black on the hair and the leggings. The armchair is filled at 20% ink
 so the white sweater lifts off it.
 
-OUTPUT: Square 1:1, 1024x1024, transparent PNG.
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```

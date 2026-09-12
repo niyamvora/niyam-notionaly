@@ -12,7 +12,7 @@ Check every asset before delivering. Most failures are the same four.
 - [ ] **Tapered linework**, not uniform monoline. (Icons excepted.)
 - [ ] **One or two solid black masses** anchoring the value, normally hair and legwear.
 - [ ] **Garments white**, outlined — not filled grey.
-- [ ] **Background transparent.** No scenery, ground line, frame or border.
+- [ ] **Background solid white.** No scenery, ground line, frame or border.
 - [ ] **Face nearly empty.** Arc eyes, tiny nose, small mouth. No pupils or blush.
 - [ ] **Accent marks present** — 8-12 dots and dashes, asymmetric.
 - [ ] **No text** anywhere in the artwork.

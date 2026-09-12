@@ -87,10 +87,14 @@ def blob(pts):
     return _smooth(list(pts) + [pts[0]]) + " Z"
 
 
-def svg(size, parts, fill=INK):
+def svg(size, parts, fill=INK, background="#FFFFFF"):
+    """Assemble an SVG. Solid white ground by default — transparent assets show as a
+    checkerboard in most viewers. Pass background=None if you need to composite."""
     body = "\n  ".join(parts)
+    bg = (f'  <rect id="bg" width="{size}" height="{size}" fill="{background}"/>\n'
+          if background else "")
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}">\n'
-            f'  <g fill="{fill}">\n  {body}\n  </g>\n</svg>\n')
+            f'{bg}  <g fill="{fill}">\n  {body}\n  </g>\n</svg>\n')
 
 
 if __name__ == "__main__":

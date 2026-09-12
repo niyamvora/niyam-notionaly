@@ -74,8 +74,8 @@ with data.
 - **Band:** a row of three to five small spots with captions
 - **Framing pair:** two figures at opposite corners of a diagram, as in the reference
 
-Never put an illustration behind text. No opacity-faded background artwork — transparent
-mono assets turn to mud behind type.
+Never put an illustration behind text. No opacity-faded background artwork — mono assets
+turn to mud behind type.
 
 ### The density test
 

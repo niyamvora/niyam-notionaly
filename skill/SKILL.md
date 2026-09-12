@@ -1,13 +1,13 @@
 ---
 name: niyam-notionaly-illustrations
-description: Generate Notion-style (Notioly-style) illustrations, characters, icons and spot marks — strictly monochrome hand-drawn line art in one warm near-black ink on a transparent background. Use when the user asks for Notion-style or Notioly-style illustrations, line-art characters, minimal monoline icons, template or landing-page artwork, empty-state graphics, avatars, or an SVG/PNG illustration asset in that clean hand-drawn productivity-app look. Also use when the user wants a copy-paste prompt to generate such art in ChatGPT, Gemini or Claude.
+description: Generate Notion-style (Notioly-style) illustrations, characters, icons and spot marks — strictly monochrome hand-drawn line art in one warm near-black ink on a solid white background. Use when the user asks for Notion-style or Notioly-style illustrations, line-art characters, minimal monoline icons, template or landing-page artwork, empty-state graphics, avatars, or an SVG/PNG illustration asset in that clean hand-drawn productivity-app look. Also use when the user wants a copy-paste prompt to generate such art in ChatGPT, Gemini or Claude.
 ---
 
 # Notion-Style Illustrations
 
 Make illustration assets in the Notioly / Notion look: one warm near-black ink, hand-drawn
 tapered linework, solid black hair and legwear against white garments, an almost empty
-canvas, transparent background.
+canvas, solid white background.
 
 The style is narrow on purpose. Its whole value is that every asset looks like it came from
 the same hand. Do not improvise on the spec.
@@ -69,7 +69,7 @@ not a condition of use.
 ### 3. Generating
 
 **Raster** — use `image_gen` with the template in `references/prompt-template.md`. One asset
-per call. Never combine several into one canvas. Request a transparent background.
+per call. Never combine several into one canvas. Request a solid white background.
 
 **Vector** — follow `references/icons-and-vector.md`:
 - Icons and spots: hand-author the SVG. Monoline is correct at icon scale.
@@ -124,7 +124,7 @@ text and numbers garble.
 | Asset type | `illustration` |
 | Format | PNG for illustrations, SVG for icons/spots/characters |
 | Canvas | 1:1 square, 1024x1024 |
-| Background | Transparent |
+| Background | Solid white |
 | Figures | One |
 | Count | One asset, unless a set was asked for |
 
