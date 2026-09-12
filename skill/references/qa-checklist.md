@@ -49,6 +49,22 @@ PY
 Expect coverage in the 6-20% band and every listed colour to be a near-neighbour of
 `#231F20` or `#FFFFFF`. Anything chromatic in that list is a fail.
 
+Coverage alone is not enough — check **edge-per-ink** too, which catches a drawing that is
+technically sparse but visually busy:
+
+```bash
+python3 - <<'PY'
+from PIL import Image, ImageFilter
+bw = Image.open("out.png").convert("L").resize((512, 512)).point(lambda p: 0 if p < 128 else 255)
+ink  = sum(1 for p in bw.getdata() if p < 128)
+edge = sum(1 for p in bw.filter(ImageFilter.FIND_EDGES).getdata() if p > 40)
+print("edge/ink:", round(edge / ink, 2), "- under 0.30 is calm, 0.40+ reads busy")
+PY
+```
+
+If it comes back high, consolidate the ink into larger solid masses and delete small detail.
+Do not simply draw less.
+
 ## Iteration order
 
 Fix in this order — earlier fixes often resolve later problems:

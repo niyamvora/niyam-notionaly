@@ -36,6 +36,20 @@ alpha. If you catch yourself adding a muted terracotta, you have left the style.
 
 If the canvas looks more than about a fifth covered in ink, it is too heavy. Delete detail.
 
+**Coverage alone does not measure sparseness.** Two drawings at identical ink coverage can
+read completely differently depending on whether the ink sits in a few solid masses or is
+scattered as fine detail. The measure that catches it is **edge-per-ink** — how much outline
+there is per unit of ink:
+
+```
+edge/ink  < 0.30   a few big solid shapes. Calm. What this style wants.
+          ~ 0.40   the same ink broken into fine detail. Reads busy.
+```
+
+Measured on two versions of the same portrait: 0.26 versus 0.41 at ~16% coverage each. The
+fix for a busy drawing is never "use less ink" — it is *consolidate* the ink into larger
+masses and delete the small stuff.
+
 ## Canvas
 
 - **1:1 square**, 1040x1040 reference (any square size is fine; 1024 or 1200 are good).

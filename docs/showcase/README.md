@@ -6,7 +6,8 @@ A real before-and-after: a personal photograph put through
 | File | What it is |
 |---|---|
 | `portrait-reference.jpg` | The source photograph. Resized web copy, cropped, metadata stripped |
-| `portrait-notionaly-monochrome.png` | The on-spec result — one ink, no colour |
+| `portrait-notionaly-chatgpt.png` | Generated in ChatGPT from the redraw-a-photo prompt (worked subject 9). Downloaded transparent; the white ground was applied afterwards, which is why that prompt now asks for white directly |
+| `portrait-notionaly-monochrome.png` | An earlier take — same ink, more fine detail |
 | `portrait-notionaly-color.png` | The same portrait with the one-ink rule deliberately broken |
 
 ## Licence — this folder is excluded
@@ -23,10 +24,15 @@ repository is MIT and free to use.
 
 ## Measured against the spec
 
-| File | Ink coverage | Chromatic pixels | Spec |
-|---|---|---|---|
-| `portrait-notionaly-monochrome.png` | 18.9% | **0.0%** | Passes the one-ink rule; slightly denser than the 6–16% band |
-| `portrait-notionaly-color.png` | 25.7% | **9.1%** | Fails — the spec permits no colour in artwork, ever |
+| File | Ink | Chromatic | Edge/ink | Verdict |
+|---|---|---|---|---|
+| `portrait-notionaly-chatgpt.png` | 16.5% | **0.0%** | **0.26** | Best result. One ink, ink concentrated in solid masses |
+| `portrait-notionaly-monochrome.png` | 16.0% | **0.0%** | 0.41 | Same ink, scattered as fine detail. Reads busier |
+| `portrait-notionaly-color.png` | 16.7% | **9.1%** | 0.39 | Fails — the spec permits no colour in artwork, ever |
+
+Edge-per-ink is the useful number here. The first two are within half a percent on coverage,
+yet clearly different to look at: the same quantity of ink in a few big shapes versus spread
+across small detail.
 
 The colour version is kept deliberately, as a counter-example. A portrait containing a full
 table of food is naturally denser than the single-figure scenes the coverage band was

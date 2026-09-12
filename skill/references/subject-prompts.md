@@ -261,3 +261,41 @@ so the white sweater lifts off it.
 
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
+
+---
+
+## 9. Redraw a photo as a sparse portrait
+
+The prompt that produced the showcase portrait in `docs/showcase/`. Attach the photo. The
+whole job is **subtraction** — a photo carries far more than this style has room for, and
+naming what to delete matters more than naming what to keep.
+
+```text
+SUBJECT: Redraw the attached photo as an outlined portrait, far sparser than a detailed
+line drawing. Keep the person recognisable — pose, framing, glasses, hair shape.
+
+DENSITY: This is the critical part. Ink must cover only about 10% of the canvas, and it must
+sit in a few large solid shapes rather than scattered fine detail. Delete everything the
+style has no room for: background, table clutter, food detail, crockery, drinks, phones,
+patterns, texture. Keep only the figure, one or two defining props, and the table edge as a
+single line.
+
+VALUE: Solid black masses for the hair and the sleeves. Garments stay white with only an
+outline. No grey fills except at most one 20% tint on a single object.
+
+LINE: Tapered brush pen — strokes swelling in the middle, thinning to a point at each end.
+Open contours with small deliberate gaps. No uniform-width strokes.
+
+FACE: Nearly empty. Two short downward arcs for closed eyes, a tiny nose, a small curved
+mouth. Keep glasses if the person wears them; they read as a defining feature.
+
+ACCENTS: Eight small dots and two or three tick marks near the head.
+
+OUTPUT: Square 1:1, PNG on a solid white background.
+```
+
+*If it keeps too much of the photo:* `Delete far more. Remove every object except the figure,
+one prop and the table line. The result should look drawn from memory, not traced.`
+
+*If it reads busy despite being sparse:* `Consolidate the ink into larger solid masses —
+fill the hair and sleeves solid black — and delete the small detail. Do not simply draw less.`

@@ -87,22 +87,30 @@ Everything below was generated with the prompts in this repo.
 
 ### From a real photo
 
-A personal photograph put through the skill — reference, the on-spec monochrome result, and
-the same portrait with the one-ink rule deliberately broken.
+A personal photograph put through the skill. The second image was generated in ChatGPT from
+the **[redraw-a-photo prompt](#redraw-a-photo)** below; its white ground was applied
+afterwards, which is why the prompt now asks for white directly.
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="docs/showcase/portrait-reference.jpg" width="200"><br><sub><b>Reference</b><br>personal photo</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="280"><br><sub><b>Monochrome</b><br>on-spec — 0% colour</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-color.png" width="280"><br><sub><b>Colour</b><br>off-spec, kept as a counter-example</sub></td>
+<td align="center" width="25%"><img src="docs/showcase/portrait-reference.jpg" width="150"><br><sub><b>Reference</b><br>personal photo</sub></td>
+<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-chatgpt.png" width="200"><br><sub><b>ChatGPT + the prompt</b><br>on-spec — 0% colour</sub></td>
+<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="200"><br><sub><b>An earlier take</b><br>same ink, more detail</sub></td>
+<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-color.png" width="200"><br><sub><b>Colour</b><br>off-spec, counter-example</sub></td>
 </tr>
 </table>
 
-The monochrome version is what the spec asks for: a single ink, measured at **0.0% chromatic
-pixels**. The colour version measures **9.1%** and is included precisely because it breaks
-the rule — it shows what the style stops being once a palette creeps in.
+All three generated images measure **0.0% chromatic pixels** except the last, which measures
+**9.1%** — it's kept precisely because it breaks the one-ink rule and shows what the style
+stops being once a palette creeps in.
 
-> Personal reference photo shared by the repository author. The three images in
+The more interesting comparison is the middle two. Both sit at ~16% ink coverage, yet the
+ChatGPT one reads far calmer. The number that catches it is **edge-per-ink**: 0.26 versus
+0.41. Same amount of ink, but concentrated into a few solid masses instead of scattered
+across fine detail. Coverage alone doesn't measure sparseness — see
+[`style-dna.md`](skill/references/style-dna.md).
+
+> Personal reference photo shared by the repository author. The images in
 > [`docs/showcase/`](docs/showcase/) are **excluded from this repository's MIT licence** and
 > are not reusable assets — see [`docs/showcase/README.md`](docs/showcase/README.md).
 
@@ -344,6 +352,71 @@ Front-on is the **hardest angle in this style** — symmetry kills it. The fix i
 symmetry deliberately in the pose while keeping the camera square.
 
 ```text
+SUBJECT: A person sitting at a desk working at a laptop, seen straight on from the front.
+
+COMPOSITION: Square-on camera, but the figure is NOT symmetrical. Head tilted slightly to
+one side. One shoulder a little higher than the other. One hand resting on the laptop, the
+other raised to the chin, thinking. The laptop is seen from behind, so only the back of the
+screen faces us — a simple rounded rectangle, no visible display, no text. A mug sits to one
+side, off-centre. No desk surface is drawn; the laptop and mug simply align on an invisible
+horizontal, with at most one short broken line under the laptop.
+
+FIGURE: One person. Voluminous curly hair as a solid black silhouette with a few white
+curls cut into it. Skin left white. White loose shirt with an outlined collar and one small
+button detail. Sleeves pushed to the elbow.
+
+VALUE ANCHORS: Solid black on the hair and on the back of the laptop screen. Everything
+else white with a black outline. The mug stays white.
+
+OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
+```
+
+*If it comes back stiff:* `Break the symmetry more — tilt the head further, drop one shoulder, and move the raised hand off centre. Keep the camera square-on.`
+
+</details>
+
+<details>
+<summary><b>2. Family of four at a dinner table</b></summary>
+
+The hardest of the set. Four figures fight the 10% ink budget, and seated bodies hide the
+trousers that normally carry the black. Expect two or three iterations.
+
+```text
+SUBJECT: A family of four sharing dinner around a table, seen from the side of the table so
+all four are visible.
+
+CANVAS: Landscape 4:3, not square — four figures need the width.
+
+COMPOSITION: Two adults and two children seated around a simple oval table seen at a low
+angle. Figures OVERLAP each other slightly; never space them out in a straight line. Vary
+the heights — the children sit lower. The table is a single clean elliptical edge filled at
+20% ink, with three or four small plain circles for plates and two simple glasses. No food
+detail, no patterns, no cutlery clutter. One person is mid-gesture, reaching or passing
+something across the table, to give the scene an action.
+
+FIGURE: Four people, seated, so only heads, torsos and arms are visible. Alternate the
+value scheme so they read apart:
+  - Adult 1: long black hair as a solid mass, skin white, WHITE top.
+  - Adult 2: short black hair, skin at 20% ink, SOLID BLACK top with a white collar.
+  - Child 1: black topknot, skin white, SOLID BLACK top.
+  - Child 2: curly black hair, skin at 20% ink, WHITE top with one thin stripe detail.
+
+VALUE ANCHORS: The legs are hidden, so the black comes from the four hair masses plus the
+two black tops. Do not let all four wear white — the composition will go flat and grey.
+
+OUTPUT: Landscape 4:3, 1365x1024, PNG on a solid white background.
+```
+
+*If it comes back cluttered:* `Far sparser. Remove all food, cutlery and table detail — keep only the table edge, three plain circles and two glasses. Strip interior detail from the clothing. Enlarge the empty margin above the figures.`
+
+*If the figures blur together:* `Make the value alternation stronger — adult 2 and child 1 in solid black tops, adult 1 and child 2 in pure white tops with only an outline.`
+
+</details>
+
+<details>
+<summary><b>3. Person reading a newspaper</b></summary>
+
+```text
 SUBJECT: A person sitting cross-legged reading a large open newspaper.
 
 COMPOSITION: The newspaper is large and open, held up so it hides most of the torso — only
@@ -362,15 +435,10 @@ newspaper in the middle. That white-black-white sandwich is the whole compositio
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
-*If it comes back stiff:* `Break the symmetry more — tilt the head further, drop one shoulder, and move the raised hand off centre. Keep the camera square-on.`
-
 </details>
 
 <details>
-<summary><b>2. Family of four at a dinner table</b></summary>
-
-The hardest of the set. Four figures fight the 10% ink budget, and seated bodies hide the
-trousers that normally carry the black. Expect two or three iterations.
+<summary><b>4. Person carrying a stack of books</b></summary>
 
 ```text
 SUBJECT: A person walking mid-stride while carrying a tall stack of books.
@@ -389,14 +457,10 @@ mostly white so it reads as the bright focal mass.
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
 
-*If it comes back cluttered:* `Far sparser. Remove all food, cutlery and table detail — keep only the table edge, three plain circles and two glasses. Strip interior detail from the clothing. Enlarge the empty margin above the figures.`
-
-*If the figures blur together:* `Make the value alternation stronger — adult 2 and child 1 in solid black tops, adult 1 and child 2 in pure white tops with only an outline.`
-
 </details>
 
 <details>
-<summary><b>3. Person reading a newspaper</b></summary>
+<summary><b>5. Two people collaborating over a laptop</b></summary>
 
 ```text
 SUBJECT: Two colleagues leaning in together over a single laptop, one pointing at the screen.
@@ -419,7 +483,7 @@ OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 </details>
 
 <details>
-<summary><b>4. Person carrying a stack of books</b></summary>
+<summary><b>6. Person watering a plant</b></summary>
 
 ```text
 SUBJECT: A person watering a large potted plant.
@@ -434,48 +498,6 @@ Solid black trousers. Barefoot.
 
 VALUE ANCHORS: Solid black on hair and trousers. The pot is filled at 20% ink. Leaves stay
 white with outlines so the plant reads light.
-
-OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
-```
-
-</details>
-
-<details>
-<summary><b>5. Two people collaborating over a laptop</b></summary>
-
-```text
-SUBJECT: A person sitting at a laptop waving at the screen during a video call.
-
-COMPOSITION: Three-quarter view, so the laptop is partly turned and we see the back edge
-and a sliver of the open lid — no screen content, no interface, no text. One arm raised
-mid-wave, the other resting flat. Head tilted, shoulders relaxed. Two or three tick marks
-near the raised hand for motion.
-
-FIGURE: One person. Short cropped hair, solid black. Skin at 20% ink. White shirt with an
-outlined collar. Solid black trousers, only partly visible.
-
-VALUE ANCHORS: Solid black on the hair and the laptop lid.
-
-OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
-```
-
-</details>
-
-<details>
-<summary><b>6. Person watering a plant</b></summary>
-
-```text
-SUBJECT: A person curled up in an armchair holding a mug with both hands.
-
-COMPOSITION: Side view. Legs tucked up under them, shoulders rounded, head tipped slightly
-back — fully relaxed. The armchair is drawn with a minimum of strokes: one curved back, one
-seat line, one arm. Two or three small curls of steam rising from the mug.
-
-FIGURE: One person. Long wavy hair, solid black, falling over the chair back. Skin white.
-White oversized sweater with visible cuffs. Solid black leggings. Bare feet.
-
-VALUE ANCHORS: Solid black on the hair and the leggings. The armchair is filled at 20% ink
-so the white sweater lifts off it.
 
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 ```
@@ -524,6 +546,43 @@ OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 
 </details>
 
+<a id="redraw-a-photo"></a>
+<details>
+<summary><b>9. Redraw a photo as a sparse portrait</b></summary>
+
+The prompt that produced the showcase portrait in `docs/showcase/`. Attach the photo. The
+whole job is **subtraction** — a photo carries far more than this style has room for, and
+naming what to delete matters more than naming what to keep.
+
+```text
+SUBJECT: Redraw the attached photo as an outlined portrait, far sparser than a detailed
+line drawing. Keep the person recognisable — pose, framing, glasses, hair shape.
+
+DENSITY: This is the critical part. Ink must cover only about 10% of the canvas, and it must
+sit in a few large solid shapes rather than scattered fine detail. Delete everything the
+style has no room for: background, table clutter, food detail, crockery, drinks, phones,
+patterns, texture. Keep only the figure, one or two defining props, and the table edge as a
+single line.
+
+VALUE: Solid black masses for the hair and the sleeves. Garments stay white with only an
+outline. No grey fills except at most one 20% tint on a single object.
+
+LINE: Tapered brush pen — strokes swelling in the middle, thinning to a point at each end.
+Open contours with small deliberate gaps. No uniform-width strokes.
+
+FACE: Nearly empty. Two short downward arcs for closed eyes, a tiny nose, a small curved
+mouth. Keep glasses if the person wears them; they read as a defining feature.
+
+ACCENTS: Eight small dots and two or three tick marks near the head.
+
+OUTPUT: Square 1:1, PNG on a solid white background.
+```
+
+*If it keeps too much of the photo:* `Delete far more. Remove every object except the figure, one prop and the table line. The result should look drawn from memory, not traced.`
+
+*If it reads busy despite being sparse:* `Consolidate the ink into larger solid masses — fill the hair and sleeves solid black — and delete the small detail. Do not simply draw less.`
+
+</details>
 
 ---
 
