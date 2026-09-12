@@ -26,6 +26,9 @@ illustration.
 - Geometry on whole or half pixels where possible
 - One concept per icon, 3-6 paths maximum
 - No tapering, no accent dots, no fills
+- **Transparent background.** Icons are the one exception to the project's white-ground
+  default: they overlay other surfaces, so a white ground would show as a box. If you build
+  one with `taper.py`, pass `background=None`.
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -120,7 +123,7 @@ set those specific paths to `fill="#231F20" fill-opacity="0.2"`.
 | "for Notion" | `.png` at 1024 — Notion does not render uploaded SVG inline |
 | "for Figma" | `.svg` |
 | "for a website" | `.svg`, plus a `.png` fallback |
-| "icon set" | one `.svg` per icon, consistent 24 grid, plus a contact-sheet preview |
+| "icon set" | one `.svg` per icon, consistent 24 grid, transparent, plus a contact-sheet preview |
 
 Notion caveat worth stating: Notion will not render an uploaded `.svg` as an image block.
 Ship PNG for Notion use and keep the SVG as the source.

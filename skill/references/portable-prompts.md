@@ -173,7 +173,11 @@ ICONS: [LIST THEM, e.g. book, calendar, inbox, plant]
 SPEC: viewBox="0 0 24 24". stroke="#231F20", stroke-width="1.75", fill="none",
 stroke-linecap="round", stroke-linejoin="round". 2px clear padding so the live area is
 20x20. Uniform monoline — no tapering on icons. 3-6 paths maximum per icon. One concept
-each. No fills, no dots, no text, no background.
+each. No fills, no dots, no text.
+
+BACKGROUND: Transparent. Icons are the one exception to this project's white-ground rule —
+they sit on top of other surfaces, so a white square behind them would show as a box. Do not
+add a background rect.
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:

@@ -43,6 +43,8 @@ If the canvas looks more than about a fifth covered in ink, it is too heavy. Del
   project outputs white by default: transparent assets show as a checkerboard in most file
   viewers and vanish against dark backgrounds. If you specifically need to composite over a
   colour, ask for transparent and the rule flips — nothing else about the style changes.
+- **Icons are the exception and stay transparent.** They overlay other surfaces, so a white
+  ground would show as a box behind them.
 - No frame, no border, no background scene, no ground plane, no horizon.
 
 ## Line quality
