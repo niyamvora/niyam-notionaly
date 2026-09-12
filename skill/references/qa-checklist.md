@@ -55,15 +55,21 @@ technically sparse but visually busy:
 ```bash
 python3 - <<'PY'
 from PIL import Image, ImageFilter
-bw = Image.open("out.png").convert("L").resize((512, 512)).point(lambda p: 0 if p < 128 else 255)
+im = Image.open("out.png").convert("RGBA")
+# flatten onto white FIRST: convert("L") turns transparent pixels black,
+# which reports an almost-empty drawing as ~90% ink.
+im = Image.alpha_composite(Image.new("RGBA", im.size, (255, 255, 255, 255)), im)
+bw = im.convert("L").resize((512, 512)).point(lambda p: 0 if p < 128 else 255)
 ink  = sum(1 for p in bw.getdata() if p < 128)
 edge = sum(1 for p in bw.filter(ImageFilter.FIND_EDGES).getdata() if p > 40)
-print("edge/ink:", round(edge / ink, 2), "- under 0.30 is calm, 0.40+ reads busy")
+print("edge/ink:   ", round(edge / ink, 2), "- under 0.30 calm, 0.40+ busy, 0.60+ floaty")
+print("solid mass: ", round(max(ink - edge, 0) / ink * 100), "% - over 70% is properly anchored")
 PY
 ```
 
-If it comes back high, consolidate the ink into larger solid masses and delete small detail.
-Do not simply draw less.
+If edge/ink comes back high or solid mass comes back low, consolidate the ink into larger
+solid masses and delete small detail. **Do not simply draw less** — an outline-only drawing
+can sit well inside the coverage band and still be the weakest thing you produce.
 
 ## Iteration order
 

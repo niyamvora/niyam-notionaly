@@ -87,28 +87,43 @@ Everything below was generated with the prompts in this repo.
 
 ### From a real photo
 
-A personal photograph put through the skill. The second image was generated in ChatGPT from
-the **[redraw-a-photo prompt](#redraw-a-photo)** below; its white ground was applied
-afterwards, which is why the prompt now asks for white directly.
+A personal photograph put through the skill with the
+**[redraw-a-photo prompt](#redraw-a-photo)** below — once in ChatGPT, once in Codex. Same
+prompt, two tools, both on-spec.
 
 <table>
 <tr>
-<td align="center" width="25%"><img src="docs/showcase/portrait-reference.jpg" width="150"><br><sub><b>Reference</b><br>personal photo</sub></td>
-<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-chatgpt.png" width="200"><br><sub><b>ChatGPT + the prompt</b><br>on-spec — 0% colour</sub></td>
-<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="200"><br><sub><b>An earlier take</b><br>same ink, more detail</sub></td>
-<td align="center" width="25%"><img src="docs/showcase/portrait-notionaly-color.png" width="200"><br><sub><b>Colour</b><br>off-spec, counter-example</sub></td>
+<td align="center" width="34%"><img src="docs/showcase/portrait-reference.jpg" width="150"><br><sub><b>Reference</b><br>personal photo</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-chatgpt.png" width="225"><br><sub><b>ChatGPT</b><br>16.5% ink · 74% solid mass</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-codex.png" width="225"><br><sub><b>Codex</b><br>10.6% ink · 66% solid mass</sub></td>
 </tr>
 </table>
 
-All three generated images measure **0.0% chromatic pixels** except the last, which measures
-**9.1%** — it's kept precisely because it breaks the one-ink rule and shows what the style
-stops being once a palette creeps in.
+#### Three takes that each break one rule
 
-The more interesting comparison is the middle two. Both sit at ~16% ink coverage, yet the
-ChatGPT one reads far calmer. The number that catches it is **edge-per-ink**: 0.26 versus
-0.41. Same amount of ink, but concentrated into a few solid masses instead of scattered
-across fine detail. Coverage alone doesn't measure sparseness — see
-[`style-dna.md`](skill/references/style-dna.md).
+Same photo, one rule relaxed in each. This is what the spec is protecting against:
+
+<table>
+<tr>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-outline.png" width="215"><br><sub><b>No solid masses</b><br>outline only — thin, floaty</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="215"><br><sub><b>Too much detail</b><br>same ink, scattered</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-color.png" width="215"><br><sub><b>Colour</b><br>breaks the one-ink rule</sub></td>
+</tr>
+</table>
+
+| | Ink coverage | Solid mass | Edge/ink | Chromatic |
+|---|---|---|---|---|
+| **ChatGPT — on-spec** | 16.5% | **73.7%** | **0.26** | 0.0% |
+| **Codex — on-spec** | 10.6% | 65.7% | 0.34 | 0.0% |
+| No solid masses | **7.1%** | 30.4% | 0.70 | 0.0% |
+| Too much detail | 16.0% | 59.2% | 0.41 | 0.0% |
+| Colour | 16.7% | — | 0.39 | **9.1%** |
+
+The outline-only version is the instructive one. It sits **inside** the 6–16% coverage band
+— sparser than either on-spec result — and is still the weakest of the five, because only
+30% of its ink is solid shape rather than outline. Coverage is not the measure. What matters
+is ink **consolidated into a few solid masses**, which is why the spec insists on solid black
+hair and sleeves.
 
 > Personal reference photo shared by the repository author. The images in
 > [`docs/showcase/`](docs/showcase/) are **excluded from this repository's MIT licence** and

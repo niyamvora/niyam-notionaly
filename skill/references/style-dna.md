@@ -44,7 +44,22 @@ there is per unit of ink:
 ```
 edge/ink  < 0.30   a few big solid shapes. Calm. What this style wants.
           ~ 0.40   the same ink broken into fine detail. Reads busy.
+          > 0.60   almost all outline, almost no fill. Thin and floaty.
 ```
+
+The companion measure is **solid-mass share** — the proportion of ink that is shape interior
+rather than outline:
+
+```
+solid mass  > 70%   properly anchored
+            ~ 60%   drifting toward detail
+            < 40%   outline-only. Weak, regardless of how sparse it is.
+```
+
+Measured on four versions of the same portrait, the outline-only one had the *lowest* ink
+coverage of all — 7.1%, comfortably inside the target band — and was still the weakest,
+because only 30% of its ink was solid shape. **Coverage is not the measure.** A drawing can
+be sparse and still fail. What it needs is ink consolidated into one or two solid masses.
 
 Measured on two versions of the same portrait: 0.26 versus 0.41 at ~16% coverage each. The
 fix for a busy drawing is never "use less ink" — it is *consolidate* the ink into larger

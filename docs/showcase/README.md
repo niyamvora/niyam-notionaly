@@ -6,7 +6,9 @@ A real before-and-after: a personal photograph put through
 | File | What it is |
 |---|---|
 | `portrait-reference.jpg` | The source photograph. Resized web copy, cropped, metadata stripped |
-| `portrait-notionaly-chatgpt.png` | Generated in ChatGPT from the redraw-a-photo prompt (worked subject 9). Downloaded transparent; the white ground was applied afterwards, which is why that prompt now asks for white directly |
+| `portrait-notionaly-chatgpt.png` | ChatGPT, from the redraw-a-photo prompt (worked subject 9). Downloaded transparent; white ground added afterwards, which is why that prompt now asks for white directly |
+| `portrait-notionaly-codex.png` | Codex, same prompt. Flattened to white here |
+| `portrait-notionaly-outline.png` | Outline only — no solid masses. Sparsest of all and still the weakest |
 | `portrait-notionaly-monochrome.png` | An earlier take — same ink, more fine detail |
 | `portrait-notionaly-color.png` | The same portrait with the one-ink rule deliberately broken |
 
@@ -26,7 +28,9 @@ repository is MIT and free to use.
 
 | File | Ink | Chromatic | Edge/ink | Verdict |
 |---|---|---|---|---|
-| `portrait-notionaly-chatgpt.png` | 16.5% | **0.0%** | **0.26** | Best result. One ink, ink concentrated in solid masses |
+| `portrait-notionaly-chatgpt.png` | 16.5% | **0.0%** | **0.26** | On-spec. Ink well consolidated into solid masses |
+| `portrait-notionaly-codex.png` | 10.6% | **0.0%** | 0.34 | On-spec. Closest to the ~10% coverage the prompt asks for |
+| `portrait-notionaly-outline.png` | 7.1% | **0.0%** | 0.70 | Sparsest of all and still weakest — only 30% solid mass |
 | `portrait-notionaly-monochrome.png` | 16.0% | **0.0%** | 0.41 | Same ink, scattered as fine detail. Reads busier |
 | `portrait-notionaly-color.png` | 16.7% | **9.1%** | 0.39 | Fails — the spec permits no colour in artwork, ever |
 
