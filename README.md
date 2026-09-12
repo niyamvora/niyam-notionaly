@@ -79,6 +79,27 @@ Use $niyam-notionly-infographic to build a poster from examples/japan-buffers.md
 
 Everything below was generated with the prompts in this repo.
 
+### From a real photo
+
+A personal photograph put through the skill — reference, the on-spec monochrome result, and
+the same portrait with the one-ink rule deliberately broken.
+
+<table>
+<tr>
+<td align="center" width="33%"><img src="docs/showcase/portrait-reference.jpg" width="200"><br><sub><b>Reference</b><br>personal photo</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionly-monochrome.png" width="280"><br><sub><b>Monochrome</b><br>on-spec — 0% colour</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionly-color.png" width="280"><br><sub><b>Colour</b><br>off-spec, kept as a counter-example</sub></td>
+</tr>
+</table>
+
+The monochrome version is what the spec asks for: a single ink, measured at **0.0% chromatic
+pixels**. The colour version measures **9.1%** and is included precisely because it breaks
+the rule — it shows what the style stops being once a palette creeps in.
+
+> Personal reference photo shared by the repository author. The three images in
+> [`docs/showcase/`](docs/showcase/) are **excluded from this repository's MIT licence** and
+> are not reusable assets — see [`docs/showcase/README.md`](docs/showcase/README.md).
+
 ### Characters
 
 Generated in Codex from [`subject-prompts.md`](skill/references/subject-prompts.md).
@@ -558,6 +579,11 @@ assets are redistributed here; all are worth your time directly:
 ## Licence
 
 MIT — see [LICENSE](LICENSE).
+
+**Exception:** [`docs/showcase/`](docs/showcase/) contains a personal photograph of the
+repository author and portraits derived from it. Those images are **not** MIT-licensed, not
+reusable assets, and all rights are reserved. See
+[`docs/showcase/README.md`](docs/showcase/README.md).
 
 Calibration references are third-party artwork and are **not distributed** with this repo;
 see [`skill/NOTICE.md`](skill/NOTICE.md) and

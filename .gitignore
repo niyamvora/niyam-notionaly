@@ -11,3 +11,9 @@ skill/assets/reference/**/*.svg
 
 # Export intermediates
 **/raw.png
+
+# Full-resolution personal originals stay out of Git. Only the resized,
+# metadata-stripped web copies in docs/showcase/ are tracked.
+WhatsApp*
+*-portrait-v*.png
+docs/showcase/*-full.*

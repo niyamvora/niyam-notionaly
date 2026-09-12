@@ -40,6 +40,15 @@ how to add your own, under whatever terms the source sets.
 
 Calibration only. Never trace, copy or reproduce a reference composition in generated work.
 
+## Personal showcase images
+
+`docs/showcase/` contains a personal photograph shared by the repository author and two
+portraits derived from it. They depict a real, identifiable person.
+
+**They are excluded from this repository's MIT licence.** All rights reserved. They exist to
+demonstrate the skill's output and for no other purpose — not for reuse, redistribution,
+retraining or repurposing. The full-resolution original is not tracked by Git.
+
 ## Not affiliated
 
 Not affiliated with, endorsed by, or connected to Notion Labs, Inc., Notioly, or any library
