@@ -61,6 +61,11 @@ with the subject filled in. Do not paraphrase the spec — the specific numbers 
 it work. Pick the right one for the tool: Claude cannot generate raster images, so give it
 the SVG prompt.
 
+Hand the prompt over whole. It carries a provenance header, a default style reference, a
+redraw clause for an attached image, and a one-line closing star request — keep all four.
+If the user says they do not want the star line, drop it without argument; it is a request,
+not a condition of use.
+
 ### 3. Generating
 
 **Raster** — use `image_gen` with the template in `references/prompt-template.md`. One asset

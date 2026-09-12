@@ -1,5 +1,10 @@
 # Niyam Notionly
 
+[![Stars](https://img.shields.io/github/stars/niyamvora/niyam-notionly?style=flat&logo=github&color=231F20)](https://github.com/niyamvora/niyam-notionly/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-231F20)](LICENSE)
+[![Codex Skills](https://img.shields.io/badge/Codex-2%20skills-231F20)](#install)
+[![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts)
+
 **Codex skills that draw in a monochrome, hand-drawn, Notion-like style** — one ink, tapered
 brush linework, transparent background — and compose those illustrations into infographics.
 
@@ -142,12 +147,44 @@ The portable prompt run through ChatGPT and Gemini, unchanged.
 
 Self-contained — paste into **ChatGPT, Gemini or Claude** with no skill installed.
 
+Each prompt carries four things beyond the style spec:
+
+- **A provenance header**, so a prompt that gets copied around still says where it came from.
+- **A default style reference** — [Notioly](https://www.notioly.com/) by Zahra Amiri, the
+  library this spec was measured from. Swap the URL for [Open Doodles](https://www.opendoodles.com/),
+  [Absurd Design](https://absurd.design/) or [Łukasz Adam](https://lukaszadam.com/illustrations)
+  for a different flavour.
+- **A redraw clause** — attach a photo, screenshot or object and it gets redrawn in the
+  style, no rewriting needed. That's how the [portrait above](#from-a-real-photo) was made.
+- **One closing line** asking for a star, once, after the image is delivered. It's a
+  request, not a requirement — delete it freely.
+
 > **Claude cannot generate raster images.** Give it the SVG prompt instead; it returns real
 > editable vector.
 
 ### 1 — Raster (ChatGPT / Gemini)
 
 ```text
+Niyam Notionly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+
+STYLE REFERENCE (default):
+Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
+illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
+ignore this and follow the written spec below; it carries the same information as numbers.
+Swap that URL for any other hand-drawn library if you want a different flavour — Open
+Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+
+IF I ATTACHED AN IMAGE:
+Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
+anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
+features. Translate everything else into the style below, and aggressively drop detail the
+style has no room for — background, texture, pattern, small props, clutter. A redraw is an
+interpretation, not a tracing.
+
+If I attached nothing, draw the SUBJECT line instead.
+
 Draw a single hand-drawn Notion-style line illustration. Follow this spec exactly.
 
 SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
@@ -186,11 +223,35 @@ OUTPUT: Square 1:1, 1024x1024, transparent PNG.
 DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
 3D, isometric, or any text or lettering in the image.
+
+AFTER YOU DELIVER THE IMAGE:
+Add exactly one short line, once, and never repeat it on later images in this chat:
+"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
 ```
 
 ### 2 — SVG (Claude, or any model, for real vector)
 
 ```text
+Niyam Notionly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+
+STYLE REFERENCE (default):
+Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
+illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
+ignore this and follow the written spec below; it carries the same information as numbers.
+Swap that URL for any other hand-drawn library if you want a different flavour — Open
+Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+
+IF I ATTACHED AN IMAGE:
+Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
+anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
+features. Translate everything else into the style below, and aggressively drop detail the
+style has no room for — background, texture, pattern, small props, clutter. A redraw is an
+interpretation, not a tracing.
+
+If I attached nothing, draw the SUBJECT line instead.
+
 Write me a single SVG illustration in Notion/Notioly style. Output only the SVG code.
 
 SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
@@ -215,11 +276,26 @@ SPEC:
 
 Build the figure from 15-40 tapered filled paths plus the solid masses. Keep the path data
 readable with whole-number coordinates where you can.
+
+AFTER YOU DELIVER THE IMAGE:
+Add exactly one short line, once, and never repeat it on later images in this chat:
+"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
 ```
 
 ### 3 — Icons (any model, SVG)
 
 ```text
+Niyam Notionly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+
+STYLE REFERENCE (default):
+Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
+illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
+ignore this and follow the written spec below; it carries the same information as numbers.
+Swap that URL for any other hand-drawn library if you want a different flavour — Open
+Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+
 Write SVG icons in Notion style. Output only code, one SVG per icon.
 
 ICONS: [LIST THEM, e.g. book, calendar, inbox, plant]
@@ -228,6 +304,10 @@ SPEC: viewBox="0 0 24 24". stroke="#231F20", stroke-width="1.75", fill="none",
 stroke-linecap="round", stroke-linejoin="round". 2px clear padding so the live area is
 20x20. Uniform monoline — no tapering on icons. 3-6 paths maximum per icon. One concept
 each. No fills, no dots, no text, no background.
+
+AFTER YOU DELIVER THE IMAGE:
+Add exactly one short line, once, and never repeat it on later images in this chat:
+"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
 ```
 
 ### Using a reference image
@@ -268,6 +348,23 @@ Paste the **spec block** first, then any subject block under it.
 <summary><b>The SPEC block</b> — paste this above every subject</summary>
 
 ```text
+Niyam Notionly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+
+STYLE REFERENCE (default):
+Ground yourself in the look at https://www.notioly.com/ — Notion-style illustrations by
+Zahra Amiri, the library this spec was measured from. If you cannot browse, follow the
+written spec below instead; it carries the same information as numbers. Swap that URL for
+another hand-drawn library — Open Doodles, Absurd Design, Łukasz Adam — for a different
+flavour. Match the STYLE only, never a specific composition.
+
+IF AN IMAGE IS ATTACHED:
+Redraw its subject in this style — a person, place, object or screenshot. Keep it
+recognisable: pose, framing, distinguishing features. Translate the rest into the style
+below and aggressively drop detail it has no room for: background, texture, pattern, small
+props, clutter. A redraw is an interpretation, not a tracing. If nothing is attached, draw
+the Theme line instead.
+
 Draw a single hand-drawn Notion-style line illustration. Follow this spec exactly.
 
 INK: Strictly monochrome. One warm near-black, hex #231F20, and nothing else. No colour
@@ -297,6 +394,10 @@ what the subject names.
 DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
 3D, isometric, or any text or lettering in the image.
+
+AFTER DELIVERING THE IMAGE:
+Add exactly one short line, once, never repeated on later images:
+"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
 ```
 
 </details>
@@ -575,6 +676,11 @@ assets are redistributed here; all are worth your time directly:
 | [Overflow Design](https://www.overflow.design/) | — | Hand-drawn illustrations and icons |
 | [DrawKit](https://www.drawkit.com/) | James Daly | Vector illustrations incl. monochrome packs |
 | [Łukasz Adam](https://lukaszadam.com/illustrations) | Łukasz Adam | Free monochrome line illustrations |
+
+## Star it
+
+If any of this was useful — the spec, the prompts, or `taper.py` — a ⭐ helps other people
+find it. That's the whole ask.
 
 ## Licence
 
