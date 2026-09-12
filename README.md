@@ -174,51 +174,141 @@ Each prompt carries four things beyond the style spec:
 ### 1 — Raster (ChatGPT / Gemini)
 
 ```text
-SUBJECT: A person sitting at a desk working at a laptop, seen straight on from the front.
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-COMPOSITION: Square-on camera, but the figure is NOT symmetrical. Head tilted slightly to
-one side. One shoulder a little higher than the other. One hand resting on the laptop, the
-other raised to the chin, thinking. The laptop is seen from behind, so only the back of the
-screen faces us — a simple rounded rectangle, no visible display, no text. A mug sits to one
-side, off-centre. No desk surface is drawn; the laptop and mug simply align on an invisible
-horizontal, with at most one short broken line under the laptop.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
 
-FIGURE: One person. Voluminous curly hair as a solid black silhouette with a few white
-curls cut into it. Skin left white. White loose shirt with an outlined collar and one small
-button detail. Sleeves pushed to the elbow.
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
 
-VALUE ANCHORS: Solid black on the hair and on the back of the laptop screen. Everything
-else white with a black outline. The mug stays white.
+Match the STYLE only, never a specific composition.
+
+IF I ATTACHED AN IMAGE:
+Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
+anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
+features. Translate everything else into the style below, and aggressively drop detail the
+style has no room for — background, texture, pattern, small props, clutter. A redraw is an
+interpretation, not a tracing.
+
+If I attached nothing, draw the SUBJECT line instead.
+
+Draw a single hand-drawn Notion-style line illustration. Follow this spec exactly.
+
+SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
+
+INK: Strictly monochrome. One warm near-black, hex #231F20, and nothing else. No colour
+anywhere. Every mid-tone is that same ink at about 20% opacity, never a separate grey.
+Opaque white fills where shapes overlap. Never use pure black #000000.
+
+LINE: Hand-drawn with a tapered brush pen — strokes swell in the middle and thin to a point
+at each end. Slight confident wobble. Rounded terminals. Open contours with small
+deliberate gaps. No hatching, texture, shadow, gradient or glow. Not uniform monoline.
+
+DENSITY: Very sparse. Ink covers only about 10% of the canvas. The subject is centred and
+fills roughly 60% of the frame, with a generous empty margin on all four sides. Nothing
+touches the edge.
+
+VALUE: Anchor the composition with one or two solid black masses — normally the hair and
+the trousers or skirt. Everything else is white with a black outline. Never fill garments
+with grey.
+
+FIGURE: Adult proportions, about 6.5 heads tall. Narrow shoulders, simple tube limbs,
+mitten hands with one or two finger separations, small solid-black wedge shoes. Generous,
+specific hair drawn as a confident filled silhouette with a few white curls cut into it.
+Not chibi, not a mascot, no oversized head.
+
+FACE: Almost empty. Eyes are two short downward arcs, closed and content. A tiny hook nose.
+A small curved mouth. No pupils, no blush, no eyelashes, no teeth.
+
+ACCENTS: Eight to ten tiny filled dots and short dashes scattered asymmetrically around the
+figure, plus two or three small tick lines near the head.
+
+BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
+scenery, no ground line, no frame, no border.
 
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
+
+DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, background scenery, ground
+lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
+3D, isometric, or any text or lettering in the image.
+
+AFTER YOU DELIVER THE IMAGE:
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ### 2 — SVG (Claude, or any model, for real vector)
 
 ```text
-SUBJECT: A family of four sharing dinner around a table, seen from the side of the table so
-all four are visible.
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-CANVAS: Landscape 4:3, not square — four figures need the width.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
 
-COMPOSITION: Two adults and two children seated around a simple oval table seen at a low
-angle. Figures OVERLAP each other slightly; never space them out in a straight line. Vary
-the heights — the children sit lower. The table is a single clean elliptical edge filled at
-20% ink, with three or four small plain circles for plates and two simple glasses. No food
-detail, no patterns, no cutlery clutter. One person is mid-gesture, reaching or passing
-something across the table, to give the scene an action.
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
 
-FIGURE: Four people, seated, so only heads, torsos and arms are visible. Alternate the
-value scheme so they read apart:
-  - Adult 1: long black hair as a solid mass, skin white, WHITE top.
-  - Adult 2: short black hair, skin at 20% ink, SOLID BLACK top with a white collar.
-  - Child 1: black topknot, skin white, SOLID BLACK top.
-  - Child 2: curly black hair, skin at 20% ink, WHITE top with one thin stripe detail.
+Match the STYLE only, never a specific composition.
 
-VALUE ANCHORS: The legs are hidden, so the black comes from the four hair masses plus the
-two black tops. Do not let all four wear white — the composition will go flat and grey.
+IF I ATTACHED AN IMAGE:
+Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
+anything. Keep who or what it is recognisable: the pose, the framing, the distinguishing
+features. Translate everything else into the style below, and aggressively drop detail the
+style has no room for — background, texture, pattern, small props, clutter. A redraw is an
+interpretation, not a tracing.
 
-OUTPUT: Landscape 4:3, 1365x1024, PNG on a solid white background.
+If I attached nothing, draw the SUBJECT line instead.
+
+Write me a single SVG illustration in Notion/Notioly style. Output only the SVG code.
+
+SUBJECT: [DESCRIBE ONE ORDINARY ACTION, ONE SENTENCE]
+
+SPEC:
+- viewBox="0 0 1024 1024", no width/height attributes. First element must be
+  <rect width="1024" height="1024" fill="#FFFFFF"/> so the canvas is solid white.
+- One ink colour only: #231F20. No other colour. Never #000000.
+- Mid-tones are the same ink with fill-opacity="0.2". Never a separate grey hex.
+- Opaque #FFFFFF fills where shapes must overlap.
+- Tapered strokes: do NOT use the stroke attribute for the linework. Draw each stroke as a
+  CLOSED FILLED PATH — an outward curve and a return curve meeting at a point at each end,
+  thickest through the middle third. Like this:
+  <path d="M12 96 C 26 44, 58 18, 96 14 C 60 26, 32 52, 20 98 Z" fill="#231F20"/>
+- Solid black masses for hair and for trousers or skirt. Everything else white with an
+  outlined contour.
+- Subject centred, occupying about 60% of the viewBox, generous margin on all sides,
+  nothing touching the edge.
+- 8-10 small filled dots and dashes scattered asymmetrically as accents.
+- Figure about 6.5 heads tall, narrow shoulders, tube limbs, mitten hands, black wedge
+  shoes. Face: two short downward arcs for closed eyes, tiny hook nose, small curved mouth.
+- No background rect, no frame, no ground line, no text, no filters, no gradients.
+
+Build the figure from 15-40 tapered filled paths plus the solid masses. Keep the path data
+readable with whole-number coordinates where you can.
+
+AFTER YOU DELIVER THE IMAGE:
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ### 3 — Icons (any model, SVG)
@@ -227,13 +317,18 @@ OUTPUT: Landscape 4:3, 1365x1024, PNG on a solid white background.
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 Write SVG icons in Notion style. Output only code, one SVG per icon.
 
@@ -249,8 +344,12 @@ they sit on top of other surfaces, so a white square behind them would show as a
 add a background rect.
 
 AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ### Using a reference image
@@ -294,12 +393,18 @@ Paste the **spec block** first, then any subject block under it.
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Ground yourself in the look at https://www.notioly.com/ — Notion-style illustrations by
-Zahra Amiri, the library this spec was measured from. If you cannot browse, follow the
-written spec below instead; it carries the same information as numbers. Swap that URL for
-another hand-drawn library — Open Doodles, Absurd Design, Łukasz Adam — for a different
-flavour. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 IF AN IMAGE IS ATTACHED:
 Redraw its subject in this style — a person, place, object or screenshot. Keep it
@@ -334,13 +439,17 @@ or three small tick lines near the head.
 BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
 scenery, no ground line, no frame, no furniture beyond what the subject names.
 
-DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
+DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, background scenery, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
 3D, isometric, or any text or lettering in the image.
 
-AFTER DELIVERING THE IMAGE:
-Add exactly one short line, once, never repeated on later images:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+AFTER YOU DELIVER THE IMAGE:
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 </details>

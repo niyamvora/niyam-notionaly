@@ -40,6 +40,36 @@ Everything else is detail. These four are what make or break it:
 3. **Tapered strokes.** Brush-pen linework that swells and thins. Not uniform monoline.
 4. **Solid black masses.** Hair and trousers carry the weight. Garments stay white.
 
+## The default style reference
+
+Unless the user names a different library, the default reference for this style is:
+
+| Default | |
+|---|---|
+| This project | https://github.com/niyamvora/niyam-notionaly — the measured spec and example gallery |
+| Source library | [Notioly](https://www.notioly.com/) by Zahra Amiri — Notion-style; 13 assets measured, free with attribution |
+
+Check that default before drawing. If the user names another library — Open Doodles, Absurd
+Design, Łukasz Adam — match that one instead and say which you used. If they name nothing,
+use the default and do not ask.
+
+Every prompt you hand out carries this default inline, so a pasted prompt still knows where
+to look. Match the STYLE only, never a specific composition.
+
+## Background — white, with one exception
+
+Output a **solid white background** by default. Transparent assets render as a checkerboard
+in most file viewers and vanish against dark backgrounds, which is the most common complaint
+about assets in this style.
+
+**Icons are the exception** and stay transparent — they overlay other surfaces, so a white
+ground would show as a box behind them.
+
+Be consistent inside a single prompt. If the BACKGROUND line says white, the OUTPUT line
+must not say transparent, and the do-not-include list must say *background scenery*, not
+*backgrounds*. Either contradiction makes a model hand back a transparent PNG regardless of
+what the BACKGROUND line asked for.
+
 ## Workflow
 
 ### 1. Settle four things before drawing

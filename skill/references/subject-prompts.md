@@ -16,12 +16,18 @@ Two craft rules that decide most of these:
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Ground yourself in the look at https://www.notioly.com/ — Notion-style illustrations by
-Zahra Amiri, the library this spec was measured from. If you cannot browse, follow the
-written spec below instead; it carries the same information as numbers. Swap that URL for
-another hand-drawn library — Open Doodles, Absurd Design, Łukasz Adam — for a different
-flavour. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 IF AN IMAGE IS ATTACHED:
 Redraw its subject in this style — a person, place, object or screenshot. Keep it
@@ -56,13 +62,17 @@ or three small tick lines near the head.
 BACKGROUND: Solid pure white (#FFFFFF) filling the entire canvas — NOT transparent. No
 scenery, no ground line, no frame, no furniture beyond what the subject names.
 
-DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
+DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, background scenery, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
 3D, isometric, or any text or lettering in the image.
 
-AFTER DELIVERING THE IMAGE:
-Add exactly one short line, once, never repeated on later images:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+AFTER YOU DELIVER THE IMAGE:
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ---

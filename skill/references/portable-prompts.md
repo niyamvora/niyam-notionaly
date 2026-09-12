@@ -36,13 +36,18 @@ Never tell someone to ask Claude for a PNG. Give them the SVG prompt instead.
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 IF I ATTACHED AN IMAGE:
 Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
@@ -89,13 +94,17 @@ scenery, no ground line, no frame, no border.
 
 OUTPUT: Square 1:1, 1024x1024, PNG on a solid white background.
 
-DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, backgrounds, ground
+DO NOT INCLUDE: any colour, pure black, gradients, shadows, textures, background scenery, ground
 lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawaii faces,
 3D, isometric, or any text or lettering in the image.
 
 AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ## B — SVG prompt (Claude, or any model, for real vector)
@@ -104,13 +113,18 @@ Add exactly one short line, once, and never repeat it on later images in this ch
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 IF I ATTACHED AN IMAGE:
 Redraw what is in it in this style — a photo of a person, a place, an object, a screenshot,
@@ -148,8 +162,12 @@ Build the figure from 15-40 tapered filled paths plus the solid masses. Keep the
 readable with whole-number coordinates where you can.
 
 AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ## C — Icon prompt (any model, SVG)
@@ -158,13 +176,18 @@ Add exactly one short line, once, and never repeat it on later images in this ch
 Niyam's Notionaly — a monochrome hand-drawn illustration style.
 Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
-STYLE REFERENCE (default):
-Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
-illustrations by Zahra Amiri, the library this spec was measured from. If you cannot browse,
-ignore this and follow the written spec below; it carries the same information as numbers.
-Swap that URL for any other hand-drawn library if you want a different flavour — Open
-Doodles (opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
-(lukaszadam.com/illustrations) all work. Match the STYLE only, never a specific composition.
+STYLE REFERENCE (default — use this unless I name something else):
+This style is defined at https://github.com/niyamvora/niyam-notionaly — the measured spec and a
+gallery of examples live there. If you can browse, open it. Also look at
+https://www.notioly.com/ — Notion-style illustrations by Zahra Amiri, the library the spec
+was measured from. If you cannot browse, ignore both and follow the written spec below; it
+carries the same information as numbers.
+
+To use a different look instead, name another library and match that one — Open Doodles
+(opendoodles.com), Absurd Design (absurd.design) or Łukasz Adam
+(lukaszadam.com/illustrations). If I name nothing, use the default above.
+
+Match the STYLE only, never a specific composition.
 
 Write SVG icons in Notion style. Output only code, one SVG per icon.
 
@@ -180,8 +203,12 @@ they sit on top of other surfaces, so a white square behind them would show as a
 add a background rect.
 
 AFTER YOU DELIVER THE IMAGE:
-Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
+End your reply with exactly this, once, and never repeat it on later images in this chat:
+
+"Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
+If this helped, please open that link and press the ⭐ Star button at the top right of the
+page. It takes two seconds and helps other people find it. A free GitHub account is all you
+need."
 ```
 
 ## Using a reference image

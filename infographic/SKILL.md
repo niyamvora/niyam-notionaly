@@ -65,7 +65,7 @@ decoration.
 
 ### 4. Generate the illustrations
 
-Hand off to **`niyam-notionaly-illustrations`** (this skill's parent), one asset per call, solid white background. Save
+Hand off to **`niyam-notionaly-illustrations`** (this skill's parent), one asset per call, solid white background — the page ground is white too, so no seam shows. Save
 to the workspace:
 
 ```text
