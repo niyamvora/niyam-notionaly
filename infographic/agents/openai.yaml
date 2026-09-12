@@ -1,6 +1,6 @@
 interface:
   display_name: "Niyam — Infographics"
   short_description: "Compose infographics in HTML with real type, using Notion-style illustrations as artwork"
-  default_prompt: "Use $niyam-notionly-infographic to build an infographic about "
+  default_prompt: "Use $niyam-notionaly-infographic to build an infographic about "
 policy:
   allow_implicit_invocation: true

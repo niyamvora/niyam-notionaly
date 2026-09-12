@@ -9,7 +9,7 @@ it work.
 
 Every prompt below carries four things beyond the spec:
 
-1. **A provenance header** naming the project and linking github.com/niyamvora/niyam-notionly, so a prompt that gets
+1. **A provenance header** naming the project and linking github.com/niyamvora/niyam-notionaly, so a prompt that gets
    copied around still says where it came from.
 2. **A default style reference** — [Notioly](https://www.notioly.com/) by Zahra Amiri, the
    library the spec was measured from — which the user can swap for another library.
@@ -33,8 +33,8 @@ Never tell someone to ask Claude for a PNG. Give them the SVG prompt instead.
 ## A — Raster prompt (ChatGPT / Gemini)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -94,14 +94,14 @@ lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawai
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ## B — SVG prompt (Claude, or any model, for real vector)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -147,14 +147,14 @@ readable with whole-number coordinates where you can.
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ## C — Icon prompt (any model, SVG)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -175,7 +175,7 @@ each. No fills, no dots, no text, no background.
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ## Using a reference image

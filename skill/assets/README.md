@@ -46,5 +46,5 @@ examples/
 ├── icons/          single-object monoline, 24px grid
 ├── spots/          objects and props
 ├── explorations/   cross-tool prompt tests, grouped by generator
-└── infographics/   composed pages (see niyam-notionly-infographic)
+└── infographics/   composed pages (see niyam-notionaly-infographic)
 ```

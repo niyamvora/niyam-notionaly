@@ -1,5 +1,5 @@
 ---
-name: niyam-notionly-illustrations
+name: niyam-notionaly-illustrations
 description: Generate Notion-style (Notioly-style) illustrations, characters, icons and spot marks — strictly monochrome hand-drawn line art in one warm near-black ink on a transparent background. Use when the user asks for Notion-style or Notioly-style illustrations, line-art characters, minimal monoline icons, template or landing-page artwork, empty-state graphics, avatars, or an SVG/PNG illustration asset in that clean hand-drawn productivity-app look. Also use when the user wants a copy-paste prompt to generate such art in ChatGPT, Gemini or Claude.
 ---
 
@@ -113,7 +113,7 @@ show the work, do not lecture about the style.
 ## Composing a page
 
 For an infographic, data poster, slide or social card, use the companion skill
-**`niyam-notionly-infographic`** (nested at `infographic/`). It composes real HTML with real
+**`niyam-notionaly-infographic`** (nested at `infographic/`). It composes real HTML with real
 type and calls this skill for its artwork. Do not build one by generating a single image —
 text and numbers garble.
 

@@ -1,13 +1,13 @@
 # Showcase
 
 A real before-and-after: a personal photograph put through
-`niyam-notionly-illustrations`.
+`niyam-notionaly-illustrations`.
 
 | File | What it is |
 |---|---|
 | `portrait-reference.jpg` | The source photograph. Resized web copy, cropped, metadata stripped |
-| `portrait-notionly-monochrome.png` | The on-spec result — one ink, no colour |
-| `portrait-notionly-color.png` | The same portrait with the one-ink rule deliberately broken |
+| `portrait-notionaly-monochrome.png` | The on-spec result — one ink, no colour |
+| `portrait-notionaly-color.png` | The same portrait with the one-ink rule deliberately broken |
 
 ## Licence — this folder is excluded
 
@@ -25,8 +25,8 @@ repository is MIT and free to use.
 
 | File | Ink coverage | Chromatic pixels | Spec |
 |---|---|---|---|
-| `portrait-notionly-monochrome.png` | 18.9% | **0.0%** | Passes the one-ink rule; slightly denser than the 6–16% band |
-| `portrait-notionly-color.png` | 25.7% | **9.1%** | Fails — the spec permits no colour in artwork, ever |
+| `portrait-notionaly-monochrome.png` | 18.9% | **0.0%** | Passes the one-ink rule; slightly denser than the 6–16% band |
+| `portrait-notionaly-color.png` | 25.7% | **9.1%** | Fails — the spec permits no colour in artwork, ever |
 
 The colour version is kept deliberately, as a counter-example. A portrait containing a full
 table of food is naturally denser than the single-figure scenes the coverage band was

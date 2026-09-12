@@ -13,8 +13,8 @@ Two craft rules that decide most of these:
 ## The SPEC block (paste above any subject)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Ground yourself in the look at https://www.notioly.com/ — Notion-style illustrations by
@@ -62,7 +62,7 @@ lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawai
 
 AFTER DELIVERING THE IMAGE:
 Add exactly one short line, once, never repeated on later images:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ---

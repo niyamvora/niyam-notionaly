@@ -1,6 +1,6 @@
 interface:
   display_name: "Niyam — Notion Illustrations"
   short_description: "Monochrome Notion-style illustrations, characters, icons and spot marks in SVG or PNG"
-  default_prompt: "Use $niyam-notionly-illustrations to draw "
+  default_prompt: "Use $niyam-notionaly-illustrations to draw "
 policy:
   allow_implicit_invocation: true

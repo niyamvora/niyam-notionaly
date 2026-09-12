@@ -1,12 +1,12 @@
 ---
-name: niyam-notionly-infographic
+name: niyam-notionaly-infographic
 description: Build infographics, data posters, stat slides and social data cards by composing real HTML with real type, using monochrome Notion-style illustrations as the artwork. Use when the user asks for an infographic, a data poster, a stats graphic, a visual summary of an article or report, a chart-led slide, or a shareable data card. Handles poster, 16:9 slide and square social canvases, and exports to PNG or PDF with headless Chrome.
 ---
 
 # Infographics
 
 Compose infographics as **HTML with real text**, illustrated with monochrome Notion-style
-artwork from `niyam-notionly-illustrations`.
+artwork from `niyam-notionaly-illustrations`.
 
 ## The rule that decides the whole approach
 
@@ -19,7 +19,7 @@ So it splits in two:
 | Layer | Built with |
 |---|---|
 | Layout, headlines, labels, numbers, charts | HTML + CSS — real, selectable, exact |
-| Spot illustrations, framing figures | `niyam-notionly-illustrations` → transparent mono PNG/SVG |
+| Spot illustrations, framing figures | `niyam-notionaly-illustrations` → transparent mono PNG/SVG |
 
 ## Read as needed
 
@@ -65,7 +65,7 @@ decoration.
 
 ### 4. Generate the illustrations
 
-Hand off to **`niyam-notionly-illustrations`** (this skill's parent), one asset per call, transparent background. Save
+Hand off to **`niyam-notionaly-illustrations`** (this skill's parent), one asset per call, transparent background. Save
 to the workspace:
 
 ```text

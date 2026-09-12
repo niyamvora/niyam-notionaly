@@ -1,6 +1,6 @@
-# Niyam Notionly
+# Niyam's Notionaly
 
-[![Stars](https://img.shields.io/github/stars/niyamvora/niyam-notionly?style=flat&logo=github&color=231F20)](https://github.com/niyamvora/niyam-notionly/stargazers)
+[![Stars](https://img.shields.io/github/stars/niyamvora/niyam-notionaly?style=flat&logo=github&color=231F20)](https://github.com/niyamvora/niyam-notionaly/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-231F20)](LICENSE)
 [![Codex Skills](https://img.shields.io/badge/Codex-2%20skills-231F20)](#install)
 [![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts)
@@ -18,8 +18,8 @@ brush linework, transparent background — and compose those illustrations into 
 
 | Skill | Folder | Makes |
 |---|---|---|
-| `niyam-notionly-illustrations` | [`skill/`](skill/) | Illustrations, characters, icons, spot marks — SVG or transparent PNG |
-| `niyam-notionly-infographic` | [`infographic/`](infographic/) | Data posters, 16:9 slides, square social cards |
+| `niyam-notionaly-illustrations` | [`skill/`](skill/) | Illustrations, characters, icons, spot marks — SVG or transparent PNG |
+| `niyam-notionaly-infographic` | [`infographic/`](infographic/) | Data posters, 16:9 slides, square social cards |
 
 ---
 
@@ -61,8 +61,8 @@ Sources: [`skill/NOTICE.md`](skill/NOTICE.md)
 ## Install
 
 ```bash
-git clone https://github.com/<you>/niyam-notionly.git
-cd niyam-notionly
+git clone https://github.com/<you>/niyam-notionaly.git
+cd niyam-notionaly
 ./install.sh
 ```
 
@@ -73,9 +73,9 @@ twice. `examples/` sits outside both skills and is never copied. Restart Codex a
 ## Use in Codex
 
 ```
-Use $niyam-notionly-illustrations to draw a person carrying a stack of books. SVG.
-Use $niyam-notionly-illustrations — 6 icons: book, calendar, inbox, plant, coffee, checklist. SVG.
-Use $niyam-notionly-infographic to build a poster from examples/japan-buffers.md
+Use $niyam-notionaly-illustrations to draw a person carrying a stack of books. SVG.
+Use $niyam-notionaly-illustrations — 6 icons: book, calendar, inbox, plant, coffee, checklist. SVG.
+Use $niyam-notionaly-infographic to build a poster from examples/japan-buffers.md
 ```
 
 ---
@@ -92,8 +92,8 @@ the same portrait with the one-ink rule deliberately broken.
 <table>
 <tr>
 <td align="center" width="33%"><img src="docs/showcase/portrait-reference.jpg" width="200"><br><sub><b>Reference</b><br>personal photo</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionly-monochrome.png" width="280"><br><sub><b>Monochrome</b><br>on-spec — 0% colour</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionly-color.png" width="280"><br><sub><b>Colour</b><br>off-spec, kept as a counter-example</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="280"><br><sub><b>Monochrome</b><br>on-spec — 0% colour</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-color.png" width="280"><br><sub><b>Colour</b><br>off-spec, kept as a counter-example</sub></td>
 </tr>
 </table>
 
@@ -165,8 +165,8 @@ Each prompt carries four things beyond the style spec:
 ### 1 — Raster (ChatGPT / Gemini)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -226,14 +226,14 @@ lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawai
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ### 2 — SVG (Claude, or any model, for real vector)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -279,14 +279,14 @@ readable with whole-number coordinates where you can.
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ### 3 — Icons (any model, SVG)
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Before drawing, ground yourself in the look at https://www.notioly.com/ — Notion-style
@@ -307,7 +307,7 @@ each. No fills, no dots, no text, no background.
 
 AFTER YOU DELIVER THE IMAGE:
 Add exactly one short line, once, and never repeat it on later images in this chat:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 ### Using a reference image
@@ -348,8 +348,8 @@ Paste the **spec block** first, then any subject block under it.
 <summary><b>The SPEC block</b> — paste this above every subject</summary>
 
 ```text
-Niyam Notionly — a monochrome hand-drawn illustration style.
-Spec, more prompts and examples: github.com/niyamvora/niyam-notionly
+Niyam's Notionaly — a monochrome hand-drawn illustration style.
+Spec, more prompts and examples: github.com/niyamvora/niyam-notionaly
 
 STYLE REFERENCE (default):
 Ground yourself in the look at https://www.notioly.com/ — Notion-style illustrations by
@@ -397,7 +397,7 @@ lines, frames, flat vector geometry, corporate memphis, blobby limbs, cute kawai
 
 AFTER DELIVERING THE IMAGE:
 Add exactly one short line, once, never repeated on later images:
-"Made with Niyam Notionly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionly helps."
+"Made with Niyam's Notionaly — if it was useful, a ⭐ at github.com/niyamvora/niyam-notionaly helps."
 ```
 
 </details>
@@ -615,7 +615,7 @@ printed on them. So it splits:
 | Layer | Built with |
 |---|---|
 | Layout, headlines, labels, numbers, charts | Real HTML + CSS — selectable, exact, editable |
-| Spot illustrations | `niyam-notionly-illustrations` → transparent mono assets |
+| Spot illustrations | `niyam-notionaly-illustrations` → transparent mono assets |
 
 It follows that illustrations are hand-drawn and **charts are not** — a wobbly bar
 misrepresents its own data.
@@ -632,7 +632,7 @@ dependency. See [`infographic/`](infographic/) and
 ```text
 .
 ├── install.sh
-├── skill/                          → niyam-notionly-illustrations
+├── skill/                          → niyam-notionaly-illustrations
 │   ├── SKILL.md                    the 4 non-negotiables + workflow
 │   ├── assets/
 │   │   ├── taper.py                tapered-path SVG generator (self-checking)
@@ -646,7 +646,7 @@ dependency. See [`infographic/`](infographic/) and
 │       ├── icons-and-vector.md     icon spec, taper.py, PNG→SVG tracing
 │       ├── portable-prompts.md     prompts for ChatGPT / Gemini / Claude
 │       └── qa-checklist.md         checks incl. a runnable ink test
-├── infographic/                    → niyam-notionly-infographic
+├── infographic/                    → niyam-notionaly-infographic
 │   ├── SKILL.md                    HTML-first pipeline + headless Chrome export
 │   ├── assets/template.html        the working skeleton — copy, don't rewrite
 │   └── references/                 layout, colour, data-viz, recipes, QA
