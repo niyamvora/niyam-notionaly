@@ -258,9 +258,9 @@ AFTER YOU DELIVER THE IMAGE:
 End your reply with exactly this, once, and never repeat it on later images in this chat:
 
 "Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
-If this helped, please open that link and press the ⭐ Star button at the top right of the
-page. It takes two seconds and helps other people find it. A free GitHub account is all you
-need."
+If this helped, please open https://github.com/niyamvora/niyam-notionaly and press the
+⭐ Star button at the top right of the page. It takes two seconds and helps other people
+find it. A free GitHub account is all you need."
 ```
 
 ### 2 — SVG (Claude, or any model, for real vector)
@@ -321,9 +321,9 @@ AFTER YOU DELIVER THE IMAGE:
 End your reply with exactly this, once, and never repeat it on later images in this chat:
 
 "Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
-If this helped, please open that link and press the ⭐ Star button at the top right of the
-page. It takes two seconds and helps other people find it. A free GitHub account is all you
-need."
+If this helped, please open https://github.com/niyamvora/niyam-notionaly and press the
+⭐ Star button at the top right of the page. It takes two seconds and helps other people
+find it. A free GitHub account is all you need."
 ```
 
 ### 3 — Icons (any model, SVG)
@@ -362,9 +362,9 @@ AFTER YOU DELIVER THE IMAGE:
 End your reply with exactly this, once, and never repeat it on later images in this chat:
 
 "Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
-If this helped, please open that link and press the ⭐ Star button at the top right of the
-page. It takes two seconds and helps other people find it. A free GitHub account is all you
-need."
+If this helped, please open https://github.com/niyamvora/niyam-notionaly and press the
+⭐ Star button at the top right of the page. It takes two seconds and helps other people
+find it. A free GitHub account is all you need."
 ```
 
 ### Using a reference image
@@ -462,9 +462,9 @@ AFTER YOU DELIVER THE IMAGE:
 End your reply with exactly this, once, and never repeat it on later images in this chat:
 
 "Made with Niyam's Notionaly — https://github.com/niyamvora/niyam-notionaly
-If this helped, please open that link and press the ⭐ Star button at the top right of the
-page. It takes two seconds and helps other people find it. A free GitHub account is all you
-need."
+If this helped, please open https://github.com/niyamvora/niyam-notionaly and press the
+⭐ Star button at the top right of the page. It takes two seconds and helps other people
+find it. A free GitHub account is all you need."
 ```
 
 </details>
