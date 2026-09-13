@@ -127,6 +127,7 @@ examples/
 ├── characters/     figures and scenes
 ├── icons/          single-object monoline, 24px grid
 ├── spots/          objects and props
+├── articles/       body-illustration sets, one folder per article
 └── explorations/   cross-tool prompt tests, grouped by generator
 ```
 
@@ -139,6 +140,14 @@ asset unless asked.
 
 Report: what was made, the format, the path, and which ones are strongest. Keep it short —
 show the work, do not lecture about the style.
+
+## Illustrating a whole article
+
+For a blog post, newsletter, Notion page or methodology doc that needs a **set** of body
+illustrations, use the companion skill **`niyam-notionaly-article`** (nested at `article/`).
+It picks which passages deserve art, produces a shot list, and calls this skill for each
+image. It also handles Chinese articles — captions in Chinese, prompts in English, still no
+text inside the artwork.
 
 ## Composing a page
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Niyam — Article Illustrations"
+  short_description: "Illustrate a whole article with a coherent set of monochrome Notion-style images"
+  default_prompt: "Use $niyam-notionaly-article to plan and draw body illustrations for "
+policy:
+  allow_implicit_invocation: true

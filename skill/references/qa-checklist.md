@@ -39,15 +39,30 @@ python3 - <<'PY'
 from PIL import Image
 from collections import Counter
 im = Image.open("out.png").convert("RGBA")
-px = [p for p in im.getdata() if p[3] > 200]
-print("opaque coverage:", round(len(px)/(im.size[0]*im.size[1])*100, 1), "%")
-for c, n in Counter(p[:3] for p in px).most_common(6):
-    print("#%02X%02X%02X" % c, round(n/len(px)*100, 1), "%")
+# Flatten onto white first, then count INK — not opaque pixels. This project ships a solid
+# white ground by default, so an alpha test reports 100% coverage on every asset it draws.
+im = Image.alpha_composite(Image.new("RGBA", im.size, (255,)*4), im).convert("RGB")
+px = [p for p in im.getdata() if sum(p) / 3 < 250]
+print("ink coverage:", round(len(px)/(im.size[0]*im.size[1])*100, 1), "%")
+for c, n in Counter(px).most_common(6):
+    chroma = max(c) - min(c)
+    print("#%02X%02X%02X" % c, round(n/len(px)*100, 1), "%",
+          "<- CHROMATIC, FAIL" if chroma > 6 else "")
 PY
 ```
 
 Expect coverage in the 6-20% band and every listed colour to be a near-neighbour of
-`#231F20` or `#FFFFFF`. Anything chromatic in that list is a fail.
+`#231F20` or `#FFFFFF`. Judge colour by the chroma column rather than by the hex — a resized
+or JPEG-compressed asset spreads into dozens of near-neighbours that are all still one ink.
+
+**The band assumes a 1:1 canvas.** The same figure on a 16:9 body illustration sits on a
+canvas 78% wider and lands near 6%. There, measure ink inside the subject's bounding box,
+where the 6-16% band still holds — `niyam-notionaly-article` → `references/qa-checklist.md`
+carries that snippet.
+
+**If `PIL` will not import**, the system Python is externally managed (PEP 668). Do not pass
+`--break-system-packages`; build a throwaway venv instead:
+`python3 -m venv /tmp/qa && /tmp/qa/bin/pip -q install pillow && /tmp/qa/bin/python - <<'PY'`
 
 Coverage alone is not enough — check **edge-per-ink** too, which catches a drawing that is
 technically sparse but visually busy:

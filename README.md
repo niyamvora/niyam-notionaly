@@ -2,11 +2,12 @@
 
 [![Stars](https://img.shields.io/github/stars/niyamvora/niyam-notionaly?style=flat&logo=github&color=231F20)](https://github.com/niyamvora/niyam-notionaly/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-231F20)](LICENSE)
-[![Codex Skills](https://img.shields.io/badge/Codex-2%20skills-231F20)](#install)
+[![Codex Skills](https://img.shields.io/badge/Codex-3%20skills-231F20)](#install)
 [![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts)
 
 **Codex skills that draw in a monochrome, hand-drawn, Notion-like style** — one ink, tapered
-brush linework, solid white background — and compose those illustrations into infographics.
+brush linework, solid white background — and compose those illustrations into infographics and
+illustrated articles.
 
 <table>
 <tr>
@@ -20,6 +21,7 @@ brush linework, solid white background — and compose those illustrations into 
 |---|---|---|
 | `niyam-notionaly-illustrations` | [`skill/`](skill/) | Illustrations, characters, icons, spot marks — SVG or PNG |
 | `niyam-notionaly-infographic` | [`infographic/`](infographic/) | Data posters, 16:9 slides, square social cards |
+| `niyam-notionaly-article` | [`article/`](article/) | Shot lists and body-illustration sets for a whole article |
 
 ---
 
@@ -77,7 +79,12 @@ twice. `examples/` sits outside both skills and is never copied. Restart Codex a
 Use $niyam-notionaly-illustrations to draw a person carrying a stack of books. SVG.
 Use $niyam-notionaly-illustrations — 6 icons: book, calendar, inbox, plant, coffee, checklist. SVG.
 Use $niyam-notionaly-infographic to build a poster from examples/japan-buffers.md
+Use $niyam-notionaly-article to illustrate examples/japan-buffers.md — shot list first
+Use $niyam-notionaly-article 为这篇中文文章配图
 ```
+
+More ready-to-paste prompts, English and Chinese, in
+[`examples/codex-prompts.md`](examples/codex-prompts.md).
 
 ---
 
@@ -731,6 +738,45 @@ dependency. See [`infographic/`](infographic/) and
 
 ---
 
+## Illustrated articles
+
+A body illustration is not decoration for a paragraph — it is **one idea from the article,
+drawn as a person doing something**. So the skill reads the piece for its cognitive anchors,
+hands back a shot list, and only then draws:
+
+```text
+placement · idea · structure · what the figure does · props · caption
+```
+
+Four to eight images for a normal article, one to three for a short post. One structure per
+image, chosen from eight. No prop, action or structure repeats inside a set — but the person
+never changes, locked by the five attributes in `characters.md`.
+
+**All the words live outside the artwork.** Captions and labels are set in real type in the
+page; the drawing itself has no lettering in it anywhere. That holds for Chinese articles too
+— the caption is Chinese, the prompt stays English, and nothing is handwritten into the image.
+CJK glyphs garble badly in image models, and the style has no room for lettering regardless.
+
+The article workflow adapts a method first published as
+[Ian Xiaohei Illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) by
+[Ian](https://github.com/helloianneo) — the shot-list-first pipeline, the structure taxonomy,
+the abstract-to-physical translation, and the rule that the figure must perform the idea
+rather than stand beside it. The visual language is not his: Ian's skill draws an absurd
+recurring character with handwritten red/orange/blue Chinese annotations, and none of that is
+used here. Worth reading in its own right. See [`skill/NOTICE.md`](skill/NOTICE.md).
+
+<img src="examples/articles/japan-buffers/01-bag-goes-ahead.png" width="640">
+
+*The suitcase takes the boring route* — shot 01 for
+[`examples/japan-buffers.md`](examples/japan-buffers.md). Hand-authored SVG via
+[`taper.py`](skill/assets/taper.py), measured at 11.7% ink inside the subject box, edge/ink
+0.25, solid mass 75%, zero chromatic pixels. The full plan is in
+[`examples/articles/japan-buffers/shot-list.md`](examples/articles/japan-buffers/shot-list.md).
+
+See [`article/`](article/).
+
+---
+
 ## Layout
 
 ```text
@@ -754,11 +800,20 @@ dependency. See [`infographic/`](infographic/) and
 │   ├── SKILL.md                    HTML-first pipeline + headless Chrome export
 │   ├── assets/template.html        the working skeleton — copy, don't rewrite
 │   └── references/                 layout, colour, data-viz, recipes, QA
+├── article/                        → niyam-notionaly-article
+│   ├── SKILL.md                    anchors → shot list → set, EN and ZH
+│   └── references/
+│       ├── shot-list.md            choosing anchors, the format, captions and Chinese
+│       ├── structures.md           the eight structures + abstract → physical
+│       ├── prompt-template.md      16:9 body-illustration prompt + edit prompts
+│       └── qa-checklist.md         set-level checks (per-asset checks are the parent's)
 └── examples/
     ├── japan-buffers.md            the article the examples illustrate
+    ├── codex-prompts.md            ready-to-paste Codex prompts, EN and ZH
     ├── characters/ icons/ spots/   generated assets, white ground
     ├── gallery/                    white-backed copies, for this README
     ├── explorations/               same prompt across ChatGPT / Gemini / Codex
+    ├── articles/                   body-illustration sets + shot list, per article
     └── infographics/               composed pages: HTML + illustrations + export
 ```
 
@@ -780,6 +835,13 @@ assets are redistributed here; all are worth your time directly:
 | [Overflow Design](https://www.overflow.design/) | — | Hand-drawn illustrations and icons |
 | [DrawKit](https://www.drawkit.com/) | James Daly | Vector illustrations incl. monochrome packs |
 | [Łukasz Adam](https://lukaszadam.com/illustrations) | Łukasz Adam | Free monochrome line illustrations |
+
+The article workflow is adapted from a different kind of source — a published skill rather
+than a library:
+
+| Project | By | |
+|---|---|---|
+| [Ian Xiaohei Illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) | [Ian](https://github.com/helloianneo) | Chinese article illustration, absurd hand-drawn, MIT. Method adapted, style not |
 
 ## Star it
 

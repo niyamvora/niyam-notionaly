@@ -29,6 +29,30 @@ Where these libraries disagree — ink colour, whether to allow one accent, how 
 — `style-dna.md` records the difference and states which convention this project follows and
 why. Each library's own assets remain under its own licence.
 
+## Article-illustration workflow
+
+The companion skill `niyam-notionaly-article` adapts a workflow first published as
+[**Ian Xiaohei Illustrations**](https://github.com/helloianneo/ian-xiaohei-illustrations) by
+[Ian](https://github.com/helloianneo) (MIT). What was taken is **method, not style**:
+
+- Reading an article for its cognitive anchors rather than illustrating evenly
+- Delivering a shot list before any image exists
+- A taxonomy of structures to pick one from, and a procedure for turning an abstract claim
+  into a physical action
+- The rule that the recurring figure must *perform* the core action rather than stand beside
+  it, with a removal test to check
+- The rule against reusing a metaphor or composition across a set
+
+What was **not** taken is everything visual. Ian's skill draws a deliberately absurd
+hand-drawn look built around a recurring black character, "小黑", on 16:9 white, with sparse
+handwritten Chinese annotations in red, orange and blue. None of that is used here. This
+project's artwork follows its own measured monochrome spec in
+[`references/style-dna.md`](references/style-dna.md) — one ink, no annotations, no mascot, no
+absurdity — and puts every label outside the image in real type.
+
+Ian's example images are not redistributed here and were not used as calibration references.
+Go and read the original; it is a different and worthwhile look in its own right.
+
 ## Calibration references
 
 `skill/assets/reference/` is for a small number of real illustrations, used to let the model

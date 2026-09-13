@@ -89,11 +89,14 @@ def blob(pts):
 
 def svg(size, parts, fill=INK, background="#FFFFFF"):
     """Assemble an SVG. Solid white ground by default — transparent assets show as a
-    checkerboard in most viewers. Pass background=None if you need to composite."""
+    checkerboard in most viewers. Pass background=None if you need to composite.
+
+    size is a square edge, or (width, height) for a landscape body illustration."""
+    w, h = size if isinstance(size, (tuple, list)) else (size, size)
     body = "\n  ".join(parts)
-    bg = (f'  <rect id="bg" width="{size}" height="{size}" fill="{background}"/>\n'
+    bg = (f'  <rect id="bg" width="{w}" height="{h}" fill="{background}"/>\n'
           if background else "")
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}">\n'
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}">\n'
             f'{bg}  <g fill="{fill}">\n  {body}\n  </g>\n</svg>\n')
 
 
@@ -107,4 +110,6 @@ if __name__ == "__main__":
     assert d.startswith("M") and d.endswith("Z"), "must be a closed path"
     assert "Q" in d, "must be smoothed"
     assert len(circle(50, 50, 40)) == 2, "circle is two arcs with a gap"
+    assert 'viewBox="0 0 400 400"' in svg(400, []), "square size still works"
+    assert 'viewBox="0 0 1600 900"' in svg((1600, 900), []), "16:9 for body illustrations"
     print("taper.py self-check passed")
