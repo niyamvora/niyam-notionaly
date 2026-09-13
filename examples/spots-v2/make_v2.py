@@ -33,7 +33,9 @@ def rbox(x0, y0, x1, y1, r, n=6):
 
 
 # element indices (file order) of white backings that become the plane
-RECOLOUR = {"01-suitcase": [0], "02-clock": [0], "03-train": [0], "04-two-days": [0, 9], "05-coffee": [0]}
+RECOLOUR = {"01-suitcase": [0], "02-clock": [0], "03-train": [0], "04-two-days": [0, 9], "05-coffee": [0, 5]}
+# a backing whose shape never matched its surface (invisible while white): redraw it, same index
+RESHAPE = {"05-coffee": {0: [(129, 158), (265, 158), (243, 320), (151, 320)]}}
 
 # a plane polygon for the spots that have no backing: the object's main surface
 PLANES = {
@@ -57,7 +59,10 @@ def convert(slug, svg):
         for i in RECOLOUR[slug]:
             e = els[i].group(0)
             assert 'fill="#FFFFFF"' in e, f"{slug}[{i}] is not a white backing"
-            body = body.replace(e, e.replace('fill="#FFFFFF"', TINT), 1)
+            new = e.replace('fill="#FFFFFF"', TINT)
+            if pts := RESHAPE.get(slug, {}).get(i):
+                new = re.sub(r'd="[^"]*"', 'd="M' + " L".join(f"{x} {y}" for x, y in pts) + ' Z"', new)
+            body = body.replace(e, new, 1)
     else:
         d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in PLANES[slug]) + " Z"
         body = f'\n  <path class="plane" d="{d}" {TINT}/>' + body

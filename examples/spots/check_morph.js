@@ -4,7 +4,7 @@
 const fs = require("fs");
 const here = __dirname;
 const MI = new Function(fs.readFileSync(`${here}/morphicons.iife.js`, "utf8") + ";return morphicons")();
-const html = fs.readFileSync(`${here}/library.html`, "utf8");
+const html = fs.readFileSync(process.argv[2] || `${here}/library.html`, "utf8");
 const unescape = s => s.replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 let n = 0;
 for (const m of html.matchAll(/data-morph="([^"]+)"/g)) {

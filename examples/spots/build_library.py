@@ -14,7 +14,7 @@ of the nearest existing line, rotation is solved by Procrustes), and each frame 
 interpolated centrelines are re-tapered into brush strokes so the style survives the morph.
 Paper backings, tints and accent dots pair by index and lerp on the side.
 
-    python3 build_library.py        # writes library.html next to the spots
+    python3 build_library.py [spots-dir] [out.html]    # default: this folder -> library.html
 """
 import copy
 import glob
@@ -85,7 +85,7 @@ def parse(svg_text):
     els = []
     for m in re.finditer(r"<(path|circle)([^>]*)/>", body):
         tag, attrs = m.group(1), m.group(2)
-        flags = dict(paper="#FFFFFF" in attrs, tint="opacity" in attrs)
+        flags = dict(paper="#FFFFFF" in attrs, tint="opacity" in attrs, plane='class="plane"' in attrs)
         if tag == "circle":
             g = lambda k: float(re.search(rf'{k}="({NUM})"', attrs).group(1))
             els.append(dict(kind="dot", cx=g("cx"), cy=g("cy"), r=g("r"), **flags))
@@ -168,6 +168,7 @@ def poly_d(pts, closed):
 def _xf(els, idxs, fn):
     for i in idxs:
         e = els[i]
+        e.setdefault("xf", []).append(fn)         # replayed onto a v2 plane that follows this element
         if e["kind"] == "stroke":
             e["L"], e["R"] = [fn(p) for p in e["L"]], [fn(p) for p in e["R"]]
         elif e["kind"] == "mass":
@@ -275,10 +276,22 @@ TWINS = {
 }
 
 
+# v2: which v1 element an inserted tint plane moves with (its own surface); absent = static
+PLANE_FOLLOWS = {"07-paper-plane": 0, "08-lightbulb": 0, "10-umbrella": 0, "11-key": 0, "14-rocket": 0, "15-globe": 0}
+
+
 def make_pair(slug, base):
     twin = copy.deepcopy(base)
+    lead = 1 if base and base[0].get("plane") else 0   # TWINS indices are v1 file order: skip the insert
     if slug in TWINS:
-        TWINS[slug](base, twin)
+        b, t = base[lead:], twin[lead:]
+        TWINS[slug](b, t)
+        twin.extend(t[len(b):])                        # extras were appended to the slice
+        if lead and (k := PLANE_FOLLOWS.get(slug)) is not None:
+            for fn in t[k].get("xf", []):
+                _xf(twin, [0], fn)
+            if "pivot" in t[k]:
+                twin[0]["pivot"] = t[k]["pivot"]
     return base, twin
 
 
@@ -302,7 +315,7 @@ def convert(svg_text, slug):
     last_under = max([i for i, e in enumerate(base) if e["kind"] == "mass" and not ink(e)], default=-1)
     for i, a in enumerate(base):
         b = twin[i]                                   # twins derive from base: index-aligned
-        fill = ' fill="var(--paper)"' if a["paper"] else (' opacity=".2"' if a["tint"] else "")
+        fill = ' fill="var(--paper)"' if a["paper"] else (' fill="var(--tint)"' if a["tint"] else "")
         if a["kind"] == "dot":
             out.append(f'<circle cx="{a["cx"]:.1f}" cy="{a["cy"]:.1f}" r="{a["r"]:.1f}"{fill} '
                        f'class="pop" data-b="{b["cx"]:.1f} {b["cy"]:.1f} {b["r"]:.1f}"/>')
@@ -345,13 +358,33 @@ def _variants(el, seed):
     return vs
 
 
+# Notion-style icon colours: name, light rgb, dark rgb, alpha. Gray is the style's own ink at 20%.
+PALETTE = [("gray", "35 31 32", "237 232 225", .2), ("brown", "159 107 83", "186 133 111", .3),
+           ("orange", "217 115 13", "199 125 72", .3), ("yellow", "203 145 47", "202 152 57", .3),
+           ("green", "68 131 97", "82 158 114", .3), ("blue", "51 126 169", "94 135 201", .32),
+           ("purple", "144 101 176", "157 104 211", .3), ("pink", "193 76 138", "209 87 150", .3),
+           ("red", "212 76 71", "223 84 82", .3)]
+TINT_CSS = "".join(f":root[data-tint={n}]{{--tl:{l};--td:{d};--ta:{a}}}\n" for n, l, d, a in PALETTE[1:])
+TINT_BTNS = "".join(f'<button data-tint="{n if n != "gray" else ""}" style="--l:{l};--d:{d}" aria-label="{n.title()}" title="{n.title()}"></button>'
+                    for n, l, d, a in PALETTE)
+
 PAGE = """<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Notionaly spots — animated</title>
+<title>Notionaly spots __VER__ — animated</title>
 <style>
 :root{--paper:#fff;--ink:#231F20;--muted:#231F2099;--line:#231F2014;color-scheme:light}
 :root[data-theme=dark]{--paper:#1a1918;--ink:#EDE8E1;--muted:#EDE8E199;--line:#EDE8E114;color-scheme:dark}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#1a1918;--ink:#EDE8E1;--muted:#EDE8E199;--line:#EDE8E114;color-scheme:dark}}
+/* tint: the style's secondary-surface plane. Gray is ink at 20%; a picked colour swaps the triple. */
+:root{--tl:35 31 32;--td:237 232 225;--ta:.2;--tint:rgb(var(--tl)/var(--ta))}
+:root[data-theme=dark]{--tint:rgb(var(--td)/var(--ta))}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--tint:rgb(var(--td)/var(--ta))}}
+__TINT_CSS__
+.tints{display:flex;gap:6px;margin-right:10px}
+.tints button{width:22px;height:22px;border-radius:50%;padding:0;border:2px solid transparent;background:rgb(var(--l));box-shadow:0 0 0 1px var(--line)}
+:root[data-theme=dark] .tints button{background:rgb(var(--d))}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .tints button{background:rgb(var(--d))}}
+.tints button[aria-pressed=true]{border-color:var(--paper);box-shadow:0 0 0 2px var(--ink)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 -apple-system,system-ui,sans-serif;padding:28px clamp(16px,4vw,48px) 64px;transition:background .25s,color .25s}
 header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:28px}
@@ -380,8 +413,9 @@ button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:
 @media(prefers-reduced-motion:reduce){.draw,.pop{animation:none!important}}
 </style>
 <header>
-  <h1>Notionaly spots<small>hover to play · __COUNT__ assets</small></h1>
-  <div class="ctl" role="group" aria-label="Hover effect">
+  <h1>Notionaly spots __VER__<small>hover to play · __COUNT__ assets</small></h1>
+  <div class="ctl">
+    <div class="tints" role="group" aria-label="Icon colour">__TINT_BTNS__</div>
     <button data-fx="draw">Draw</button>
     <button data-fx="morph">Morph</button>
     <button data-fx="boil">Boil</button>
@@ -394,7 +428,8 @@ button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:
 switches on, the envelope opens, the rocket launches — and springs into it while hovered. New lines peel off
 the nearest existing one, rotation is solved from the geometry, and every frame the interpolated centrelines
 are re-tapered into brush strokes. <b>Boil</b> steps between hand-jittered redraws at 6 fps — the classic
-hand-drawn line boil. Same source SVGs as the PNGs.</p>
+hand-drawn line boil. Same source SVGs as the PNGs. The <b>colour dots</b> tint every spot's secondary
+surface — the ink-at-20% plane of the style; gray is the style itself, the rest are Notion's icon colours.</p>
 <script>__MORPHICONS__</script>
 <script>
 const root=document.documentElement,q=new URLSearchParams(location.search);
@@ -407,6 +442,10 @@ try{if(localStorage.theme)root.dataset.theme=localStorage.theme}catch(e){}
 if(q.get('theme'))root.dataset.theme=q.get('theme');
 theme.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
   root.dataset.theme=dark?'light':'dark';try{localStorage.theme=root.dataset.theme}catch(e){}};
+const tints=document.querySelectorAll('.tints button');
+const setTint=v=>{if(v)root.dataset.tint=v;else delete root.dataset.tint;tints.forEach(b=>b.setAttribute('aria-pressed',b.dataset.tint===v));try{localStorage.tint=v}catch(e){}};
+let tint='';try{tint=localStorage.tint||''}catch(e){}if(q.has('tint'))tint=q.get('tint');setTint(tint);
+tints.forEach(b=>b.onclick=()=>setTint(b.dataset.tint));
 
 /* ---- morph. Ink: morphicons (resample -> plan -> interpPolar), re-tapered per frame.
         Backings, tints, dots: index-paired, Procrustes + polar lerp of the same shape (a port of interpPolar). */
@@ -490,26 +529,30 @@ if(q.get('play'))document.querySelectorAll('.card').forEach(c=>{c.classList.add(
 
 
 def main():
+    src = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else HERE
+    out = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else os.path.join(src, "library.html")
+    ver = os.path.basename(src).removeprefix("spots").lstrip("-")
     cards = []
-    for f in sorted(glob.glob(os.path.join(HERE, "[0-9][0-9]-*.svg"))):
+    for f in sorted(glob.glob(os.path.join(src, "[0-9][0-9]-*.svg"))):
         slug = os.path.basename(f)[:-4]
         cards.append(f'<div class="card">{convert(open(f).read(), slug)}'
                      f'<span>{slug[3:].replace("-", " ")}</span></div>')
     engine = open(os.path.join(HERE, "morphicons.iife.js")).read()
     html = (PAGE.replace("__CARDS__", "".join(cards)).replace("__COUNT__", str(len(cards)))
             .replace("__DRAW__", str(DRAW_MS)).replace("__STAGGER__", str(STAGGER_MS))
-            .replace("__MORPHICONS__", engine))
+            .replace("__MORPHICONS__", engine).replace("__VER__", ver).replace("__TINT_CSS__", TINT_CSS)
+            .replace("__TINT_BTNS__", TINT_BTNS))
     shape = lambda s: re.sub(r"[^MLQZ]", "", s)
     for d, bd in re.findall(r'<path d="([^"]+)"[^>]*data-b="([^"]+)"', html):
         assert shape(d) == shape(bd), "side element and its twin diverged"
     for values in re.findall(r'<animate attributeName="d" values="([^"]+)"', html):
         assert len({shape(v) for v in values.split(";")}) == 1, "boil variants diverged"
-    open(os.path.join(HERE, "library.html"), "w").write(html)
-    print(f"library.html: {len(cards)} spots, {len(TWINS)} twins, {len(html) // 1024} KB")
+    open(out, "w").write(html)
+    print(f"{os.path.relpath(out)}: {len(cards)} spots, {len(TWINS)} twins, {len(html) // 1024} KB")
     # OpCreative's morph-pairs test, on the real engine: every pair must morph to a drawable path halfway
     bun = shutil.which("bun") or os.path.expanduser("~/.bun/bin/bun")
     if os.path.exists(bun):
-        subprocess.run([bun, os.path.join(HERE, "check_morph.js")], check=True)
+        subprocess.run([bun, os.path.join(HERE, "check_morph.js"), out], check=True)
     else:
         print("bun not found — skipped check_morph.js")
 
