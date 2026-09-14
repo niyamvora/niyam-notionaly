@@ -308,13 +308,21 @@ TWINS = {
                                 add_stroke(b, t, [(278, 300), (296, 284)], w=3, w0=6, w1=5)),
     "25-trophy": lambda b, t: (scl(t, range(0, 6), 1.04, 200, 236),                # win
                                add_rays(b, t, 200, 130, 70, 96, (-150, -115, -90, -65, -30))),
+    "26-calendar": lambda b, t: (mov(t, [3, 4], 0, -8), scl(t, [11], 1.3, 224, 262),   # a date is circled
+                                 add_ring(b, t, 224, 262, 22, gap=14)),
+    "27-magnifying-glass": lambda b, t: (rot(t, range(0, 5), -10, 316, 316),       # looks closer
+                                         scl(t, [4], 1.3, 170, 170)),
+    "28-book": lambda b, t: (scl(t, [6], 1, 264, 106, ky=1.25), mov(t, [7, 8, 9], 0, -4),   # reads on
+                             add_stroke(b, t, [(228, 200), (300, 180)], w=2, w0=6, w1=6),
+                             add_stroke(b, t, [(228, 234), (300, 214)], w=2, w0=6, w1=6),
+                             add_stroke(b, t, [(228, 268), (280, 254)], w=2, w0=6, w1=6)),
 }
 
 
 # v2: which v1 element an inserted tint plane moves with (its own surface); absent = static
 PLANE_FOLLOWS = {"07-paper-plane": 0, "08-lightbulb": 0, "10-umbrella": 0, "11-key": 0, "14-rocket": 0, "15-globe": 0,
                  "17-bell": 0, "19-laptop": 0, "20-headphones": 0, "21-pencil": 0, "22-shopping-bag": 0,
-                 "24-map-pin": 0, "25-trophy": 0}
+                 "24-map-pin": 0, "25-trophy": 0, "27-magnifying-glass": 0}
 
 
 def make_pair(slug, base):
@@ -403,7 +411,7 @@ PALETTE = [("gray", "35 31 32", "237 232 225", .2), ("brown", "159 107 83", "186
            ("purple", "144 101 176", "157 104 211", .3), ("pink", "193 76 138", "209 87 150", .3),
            ("red", "212 76 71", "223 84 82", .3)]
 TINT_CSS = "".join(f":root[data-tint={n}]{{--tl:{l};--td:{d};--ta:{a}}}\n" for n, l, d, a in PALETTE[1:])
-TINT_BTNS = "".join(f'<button data-tint="{n if n != "gray" else ""}" style="--l:{l};--d:{d}" aria-label="{n.title()}" title="{n.title()}"></button>'
+TINT_BTNS = "".join(f'<button data-tint="{n if n != "gray" else ""}" style="--l:{l};--d:{d};--a:{a}" aria-label="{n.title()}" title="{n.title()}"></button>'
                     for n, l, d, a in PALETTE)
 
 PAGE = """<!doctype html>
@@ -419,10 +427,11 @@ PAGE = """<!doctype html>
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--tint:rgb(var(--td)/var(--ta))}}
 __TINT_CSS__
 .tints{display:flex;gap:6px;margin-right:10px}
-.tints button{width:22px;height:22px;border-radius:50%;padding:0;border:2px solid transparent;background:rgb(var(--l));box-shadow:0 0 0 1px var(--line)}
-:root[data-theme=dark] .tints button{background:rgb(var(--d))}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .tints button{background:rgb(var(--d))}}
-.tints button[aria-pressed=true]{border-color:var(--paper);box-shadow:0 0 0 2px var(--ink)}
+/* a swatch is painted with exactly the tint the icons get — the muted Notion look, not the solid colour */
+.tints button{--sw:rgb(var(--l)/var(--a));width:22px;height:22px;border-radius:50%;padding:0;border:2px solid var(--paper);background:var(--sw);box-shadow:0 0 0 1px var(--line)}
+:root[data-theme=dark] .tints button{--sw:rgb(var(--d)/var(--a))}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .tints button{--sw:rgb(var(--d)/var(--a))}}
+.tints button[aria-pressed=true]{background:var(--sw);border-color:var(--paper);box-shadow:0 0 0 1.5px var(--ink)}  /* outranks the mode buttons' solid pressed rule */
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 -apple-system,system-ui,sans-serif;padding:28px clamp(16px,4vw,48px) 64px;transition:background .25s,color .25s}
 header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:28px}

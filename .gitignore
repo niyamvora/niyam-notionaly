@@ -17,3 +17,9 @@ skill/assets/reference/**/*.svg
 WhatsApp*
 *-portrait-v*.png
 docs/showcase/*-full.*
+
+# Place reference photos supplied from Google Maps or personal downloads carry no
+# redistribution licence. Kept locally for redraws only; Wikimedia ones are tracked.
+examples/places/reference-photos/05-fushimi-inari-hall.jpg
+examples/places/reference-photos/08-fushimi-canal-boat.jpg
+examples/places/reference-photos/09-byodoin.jpg
