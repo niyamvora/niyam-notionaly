@@ -225,6 +225,13 @@ def add_ring(base, twin, cx, cy, r, gap=12):
         add_stroke(base, twin, arc(cx, cy, r, a0, a1, n=14), w=3, w0=6, w1=6, n=14)
 
 
+def rbox(x0, y0, x1, y1, r, n=6):
+    """Points round a rounded rectangle, closed — an extra drawn as one near-closed stroke."""
+    pts = (arc(x1 - r, y0 + r, r, -90, 0, n=n) + arc(x1 - r, y1 - r, r, 0, 90, n=n)
+           + arc(x0 + r, y1 - r, r, 90, 180, n=n) + arc(x0 + r, y0 + r, r, 180, 270, n=n))
+    return pts + pts[:1]
+
+
 def add_rays(base, twin, cx, cy, r0, r1, angles):
     for a in angles:
         a = math.radians(a)
@@ -273,25 +280,56 @@ TWINS = {
                                add_stroke(b, t, [(176, 336), (168, 362)]),
                                add_stroke(b, t, [(224, 336), (232, 362)])),
     "15-globe": lambda b, t: (rot(t, range(0, 5), -12, 200, 200), mov(t, [2, 3], 36, 0)),  # spins
+    "16-house": lambda b, t: (add_stroke(b, t, [(262, 92), (254, 74), (266, 56)], w=3, w0=6, w1=5),   # chimney smoke
+                              add_stroke(b, t, [(270, 66), (262, 46), (274, 28)], w=3, w0=6, w1=5)),
+    "17-bell": lambda b, t: (rot(t, range(0, 4), 14, 200, 90),                     # BellRing
+                             add_stroke(b, t, arc(200, 200, 140, 205, 235, n=8), w=3, w0=6, w1=6, n=8),
+                             add_stroke(b, t, arc(200, 200, 140, -55, -25, n=8), w=3, w0=6, w1=6, n=8)),
+    "18-plant": lambda b, t: (scl(t, [5, 6, 7], 1.12, 200, 232), scl(t, [4], 1, 200, 232, ky=1.08),  # grows
+                              add_stroke(b, t, [(198, 150), (172, 142), (152, 120)], w=3, w0=6, w1=4)),
+    "19-laptop": lambda b, t: (scl(t, [0, 1], 1.02, 200, 166),                     # wakes: text appears
+                               add_stroke(b, t, [(140, 136), (240, 136)]), add_stroke(b, t, [(140, 166), (210, 166)]),
+                               add_stroke(b, t, [(140, 196), (256, 196)])),
+    "20-headphones": lambda b, t: (mov(t, range(0, 7), 0, -8),                     # music
+                                   add_stroke(b, t, [(296, 104), (296, 54)], w=3, w0=6, w1=6),
+                                   add_stroke(b, t, [(296, 54), (318, 66)], w=3, w0=6, w1=5),
+                                   add_stroke(b, t, [(338, 78), (338, 32)], w=3, w0=6, w1=6),
+                                   add_stroke(b, t, [(338, 32), (358, 42)], w=3, w0=6, w1=5)),
+    "21-pencil": lambda b, t: (rot(t, range(0, 5), -8, 86, 314),                   # writes
+                               add_stroke(b, t, [(56, 332), (84, 342), (112, 334), (140, 344), (168, 336)], w=3, w0=6, w1=6, n=16)),
+    "22-shopping-bag": lambda b, t: (mov(t, range(0, 4), 0, -10), scl(t, range(0, 4), 1.03, 200, 240),  # bought
+                                     mov(t, [5], 8, -34), add_rays(b, t, 330, 118, 14, 34, (-120, -75, -30))),
+    "23-chat-bubble": lambda b, t: (mov(t, [3], 0, -6), mov(t, [4], 0, -14), mov(t, [5], 0, -6),   # reply arrives
+                                    mov(t, [7], 14, -26),
+                                    add_stroke(b, t, rbox(240, 40, 340, 108, 16), w=3, w0=6, w1=6, n=28),
+                                    add_stroke(b, t, [(318, 106), (330, 132), (290, 106)], w=3, w0=6, w1=6, n=12)),
+    "24-map-pin": lambda b, t: (mov(t, [0, 1], 0, -22), scl(t, [2, 3], 1.25, 200, 328),   # bounces
+                                add_stroke(b, t, [(122, 300), (104, 284)], w=3, w0=6, w1=5),
+                                add_stroke(b, t, [(278, 300), (296, 284)], w=3, w0=6, w1=5)),
+    "25-trophy": lambda b, t: (scl(t, range(0, 6), 1.04, 200, 236),                # win
+                               add_rays(b, t, 200, 130, 70, 96, (-150, -115, -90, -65, -30))),
 }
 
 
 # v2: which v1 element an inserted tint plane moves with (its own surface); absent = static
-PLANE_FOLLOWS = {"07-paper-plane": 0, "08-lightbulb": 0, "10-umbrella": 0, "11-key": 0, "14-rocket": 0, "15-globe": 0}
+PLANE_FOLLOWS = {"07-paper-plane": 0, "08-lightbulb": 0, "10-umbrella": 0, "11-key": 0, "14-rocket": 0, "15-globe": 0,
+                 "17-bell": 0, "19-laptop": 0, "20-headphones": 0, "21-pencil": 0, "22-shopping-bag": 0,
+                 "24-map-pin": 0, "25-trophy": 0}
 
 
 def make_pair(slug, base):
     twin = copy.deepcopy(base)
-    lead = 1 if base and base[0].get("plane") else 0   # TWINS indices are v1 file order: skip the insert
+    lead = next((i for i, e in enumerate(base) if not e.get("plane")), len(base))  # v2 inserts; TWINS indices are v1 order
     if slug in TWINS:
         b, t = base[lead:], twin[lead:]
         TWINS[slug](b, t)
         twin.extend(t[len(b):])                        # extras were appended to the slice
         if lead and (k := PLANE_FOLLOWS.get(slug)) is not None:
             for fn in t[k].get("xf", []):
-                _xf(twin, [0], fn)
-            if "pivot" in t[k]:
-                twin[0]["pivot"] = t[k]["pivot"]
+                _xf(twin, range(lead), fn)
+            for j in range(lead):
+                if "pivot" in t[k]:
+                    twin[j]["pivot"] = t[k]["pivot"]
     return base, twin
 
 

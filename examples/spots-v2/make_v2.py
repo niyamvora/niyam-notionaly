@@ -49,6 +49,16 @@ PLANES = {
     "13-mountain": [(90, 300), (186, 138), (257, 262), (240, 300)],             # near peak
     "14-rocket": [(200, 76), (154, 170), (158, 268), (242, 268), (246, 170)],  # hull
     "15-globe": disc(200, 200, 108),                                            # sphere
+    "16-house": [(100, 196), (300, 196), (300, 320), (100, 320)],               # walls
+    "17-bell": [(118, 262), (122, 200), (150, 120), (200, 96), (250, 120), (278, 200), (282, 262)],
+    "18-plant": [(130, 236), (270, 236), (260, 324), (140, 324)],               # pot
+    "19-laptop": rbox(104, 96, 296, 236, 10),                                   # screen
+    "20-headphones": [rbox(70, 190, 126, 290, 16), rbox(274, 190, 330, 290, 16)],  # both cups
+    "21-pencil": [(109, 269), (279, 99), (301, 121), (131, 291)],               # body
+    "22-shopping-bag": [(100, 182), (300, 182), (300, 324), (100, 324)],        # bag
+    "23-chat-bubble": rbox(80, 100, 320, 264, 26),                              # bubble
+    "24-map-pin": [(200, 318)] + arc(200, 170, 74, 140, 400, n=20),             # pin
+    "25-trophy": [(118, 100), (122, 170), (150, 224), (200, 236), (250, 224), (278, 170), (282, 100)],
 }
 
 
@@ -64,8 +74,12 @@ def convert(slug, svg):
                 new = re.sub(r'd="[^"]*"', 'd="M' + " L".join(f"{x} {y}" for x, y in pts) + ' Z"', new)
             body = body.replace(e, new, 1)
     else:
-        d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in PLANES[slug]) + " Z"
-        body = f'\n  <path class="plane" d="{d}" {TINT}/>' + body
+        planes = PLANES[slug]
+        if isinstance(planes[0], tuple):              # one polygon, or a list of them
+            planes = [planes]
+        for pts in reversed(planes):
+            d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in pts) + " Z"
+            body = f'\n  <path class="plane" d="{d}" {TINT}/>' + body
     return head + body + tail
 
 
