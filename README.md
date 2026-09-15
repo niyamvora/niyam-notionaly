@@ -1,18 +1,23 @@
-# Niyam's Notionaly
+# Niyam's Notionaly — Notion-style illustrations & icons with AI
 
 [![Stars](https://img.shields.io/github/stars/niyamvora/niyam-notionaly?style=flat&logo=github&color=231F20)](https://github.com/niyamvora/niyam-notionaly/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-231F20)](LICENSE)
 [![Codex Skills](https://img.shields.io/badge/Codex-2%20skills-231F20)](#install)
-[![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts)
+[![Works with](https://img.shields.io/badge/also-ChatGPT%20%C2%B7%20Gemini%20%C2%B7%20Claude-231F20)](#prompts-how-to-generate-notion-style-illustrations)
 
-**Codex skills that draw in a monochrome, hand-drawn, Notion-like style** — one ink, tapered
-brush linework, solid white background — and compose those illustrations into infographics.
+**Create Notion-style illustrations, icons and infographics with AI.** Codex skills and
+copy-paste prompts for **ChatGPT, Claude and Gemini** that draw in a monochrome, hand-drawn,
+Notion-like style — one ink, tapered brush linework, solid white background — as SVG or PNG,
+and compose those illustrations into infographics.
+
+*Also searched as: Notionly, Notion style illustrations, Notion icons, Notion illustration
+prompt, hand-drawn line art generator.*
 
 <table>
 <tr>
-<td align="center"><img src="examples/gallery/char-03-reading-newspaper.png" width="250"></td>
-<td align="center"><img src="examples/gallery/char-07-carrying-books.png" width="250"></td>
-<td align="center"><img src="examples/gallery/char-06-watering-plant.png" width="250"></td>
+<td align="center"><img src="examples/gallery/char-03-reading-newspaper.png" alt="Notion-style character: reading newspaper" width="250"></td>
+<td align="center"><img src="examples/gallery/char-07-carrying-books.png" alt="Notion-style character: carrying books" width="250"></td>
+<td align="center"><img src="examples/gallery/char-06-watering-plant.png" alt="Notion-style character: watering plant" width="250"></td>
 </tr>
 </table>
 
@@ -93,9 +98,9 @@ prompt, two tools, both on-spec.
 
 <table>
 <tr>
-<td align="center" width="34%"><img src="docs/showcase/portrait-reference.jpg" width="150"><br><sub><b>Reference</b><br>personal photo</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-chatgpt.png" width="225"><br><sub><b>ChatGPT</b><br>16.5% ink · 74% solid mass</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-codex.png" width="225"><br><sub><b>Codex</b><br>10.6% ink · 66% solid mass</sub></td>
+<td align="center" width="34%"><img src="docs/showcase/portrait-reference.jpg" alt="Reference photo used for the portrait redraw" width="150"><br><sub><b>Reference</b><br>personal photo</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-chatgpt.png" alt="Notion-style portrait drawn from a photo in ChatGPT" width="225"><br><sub><b>ChatGPT</b><br>16.5% ink · 74% solid mass</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-codex.png" alt="Notion-style portrait drawn from a photo in Codex" width="225"><br><sub><b>Codex</b><br>10.6% ink · 66% solid mass</sub></td>
 </tr>
 </table>
 
@@ -105,9 +110,9 @@ Same photo, one rule relaxed in each. This is what the spec is protecting agains
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-outline.png" width="215"><br><sub><b>No solid masses</b><br>outline only — thin, floaty</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-monochrome.png" width="215"><br><sub><b>Too much detail</b><br>same ink, scattered</sub></td>
-<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-color.png" width="215"><br><sub><b>Colour</b><br>breaks the one-ink rule</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-outline.png" alt="Off-spec portrait: outline only, no solid masses" width="215"><br><sub><b>No solid masses</b><br>outline only — thin, floaty</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-monochrome.png" alt="Off-spec portrait: too much detail" width="215"><br><sub><b>Too much detail</b><br>same ink, scattered</sub></td>
+<td align="center" width="33%"><img src="docs/showcase/portrait-notionaly-color.png" alt="Off-spec portrait: colour breaks the one-ink rule" width="215"><br><sub><b>Colour</b><br>breaks the one-ink rule</sub></td>
 </tr>
 </table>
 
@@ -134,18 +139,18 @@ hair and sleeves.
 Generated in Codex from [`subject-prompts.md`](skill/references/subject-prompts.md).
 
 <table>
-<tr><td align="center"><img src="examples/gallery/char-08-person-at-desk.png" width="250"><br><sub>Person at a desk, front view</sub></td><td align="center"><img src="examples/gallery/char-03-reading-newspaper.png" width="250"><br><sub>Reading a newspaper</sub></td><td align="center"><img src="examples/gallery/char-09-family-dinner.png" width="250"><br><sub>Family of four at dinner</sub></td></tr>
-<tr><td align="center"><img src="examples/gallery/char-07-carrying-books.png" width="250"><br><sub>Carrying a stack of books</sub></td><td align="center"><img src="examples/gallery/char-06-watering-plant.png" width="250"><br><sub>Watering a plant</sub></td><td align="center"><img src="examples/gallery/char-05-collaborating-laptop.png" width="250"><br><sub>Two people over a laptop</sub></td></tr>
-<tr><td align="center"><img src="examples/gallery/char-08-resting-with-coffee.png" width="250"><br><sub>Resting with coffee</sub></td><td align="center"><img src="examples/gallery/char-07-video-call.png" width="250"><br><sub>On a video call</sub></td><td align="center"><img src="examples/gallery/char-01-family-dinner.png" width="250"><br><sub>Family dinner, first pass</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/char-08-person-at-desk.png" alt="Notion-style character: person at desk" width="250"><br><sub>Person at a desk, front view</sub></td><td align="center"><img src="examples/gallery/char-03-reading-newspaper.png" alt="Notion-style character: reading newspaper" width="250"><br><sub>Reading a newspaper</sub></td><td align="center"><img src="examples/gallery/char-09-family-dinner.png" alt="Notion-style character: family dinner" width="250"><br><sub>Family of four at dinner</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/char-07-carrying-books.png" alt="Notion-style character: carrying books" width="250"><br><sub>Carrying a stack of books</sub></td><td align="center"><img src="examples/gallery/char-06-watering-plant.png" alt="Notion-style character: watering plant" width="250"><br><sub>Watering a plant</sub></td><td align="center"><img src="examples/gallery/char-05-collaborating-laptop.png" alt="Notion-style character: collaborating laptop" width="250"><br><sub>Two people over a laptop</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/char-08-resting-with-coffee.png" alt="Notion-style character: resting with coffee" width="250"><br><sub>Resting with coffee</sub></td><td align="center"><img src="examples/gallery/char-07-video-call.png" alt="Notion-style character: video call" width="250"><br><sub>On a video call</sub></td><td align="center"><img src="examples/gallery/char-01-family-dinner.png" alt="Notion-style character: family dinner" width="250"><br><sub>Family dinner, first pass</sub></td></tr>
 </table>
 
-### Icons
+### Notion-style icons (custom SVG)
 
 Hand-authored SVG on a 24px grid. Monoline is correct at icon scale — this is the one place
 the style does *not* taper.
 
 <table>
-<tr><td align="center"><img src="examples/gallery/icon-01-book.png" width="110"><br><sub>book</sub></td><td align="center"><img src="examples/gallery/icon-02-calendar.png" width="110"><br><sub>calendar</sub></td><td align="center"><img src="examples/gallery/icon-03-inbox.png" width="110"><br><sub>inbox</sub></td><td align="center"><img src="examples/gallery/icon-04-plant.png" width="110"><br><sub>plant</sub></td><td align="center"><img src="examples/gallery/icon-05-coffee.png" width="110"><br><sub>coffee</sub></td><td align="center"><img src="examples/gallery/icon-06-checklist.png" width="110"><br><sub>checklist</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/icon-01-book.png" alt="Notion-style icon: book" width="110"><br><sub>book</sub></td><td align="center"><img src="examples/gallery/icon-02-calendar.png" alt="Notion-style icon: calendar" width="110"><br><sub>calendar</sub></td><td align="center"><img src="examples/gallery/icon-03-inbox.png" alt="Notion-style icon: inbox" width="110"><br><sub>inbox</sub></td><td align="center"><img src="examples/gallery/icon-04-plant.png" alt="Notion-style icon: plant" width="110"><br><sub>plant</sub></td><td align="center"><img src="examples/gallery/icon-05-coffee.png" alt="Notion-style icon: coffee" width="110"><br><sub>coffee</sub></td><td align="center"><img src="examples/gallery/icon-06-checklist.png" alt="Notion-style icon: checklist" width="110"><br><sub>checklist</sub></td></tr>
 </table>
 
 ### Spots
@@ -154,7 +159,7 @@ Objects and props, hand-authored SVG via
 [`taper.py`](skill/assets/taper.py). Objects hand-author well this way; figures do not.
 
 <table>
-<tr><td align="center"><img src="examples/gallery/spot-01-suitcase.png" width="130"><br><sub>suitcase</sub></td><td align="center"><img src="examples/gallery/spot-02-clock.png" width="130"><br><sub>clock</sub></td><td align="center"><img src="examples/gallery/spot-03-train.png" width="130"><br><sub>train</sub></td><td align="center"><img src="examples/gallery/spot-04-two-days.png" width="130"><br><sub>two days</sub></td><td align="center"><img src="examples/gallery/spot-05-coffee.png" width="130"><br><sub>coffee</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/spot-01-suitcase.png" alt="Notion-style spot illustration: suitcase" width="130"><br><sub>suitcase</sub></td><td align="center"><img src="examples/gallery/spot-02-clock.png" alt="Notion-style spot illustration: clock" width="130"><br><sub>clock</sub></td><td align="center"><img src="examples/gallery/spot-03-train.png" alt="Notion-style spot illustration: train" width="130"><br><sub>train</sub></td><td align="center"><img src="examples/gallery/spot-04-two-days.png" alt="Notion-style spot illustration: two days" width="130"><br><sub>two days</sub></td><td align="center"><img src="examples/gallery/spot-05-coffee.png" alt="Notion-style spot illustration: coffee" width="130"><br><sub>coffee</sub></td></tr>
 </table>
 
 ### Same prompt, different tools
@@ -162,12 +167,12 @@ Objects and props, hand-authored SVG via
 The portable prompt run through ChatGPT and Gemini, unchanged.
 
 <table>
-<tr><td align="center"><img src="examples/gallery/expl-chatgpt-1.png" width="230"><br><sub>ChatGPT</sub></td><td align="center"><img src="examples/gallery/expl-gemini-1.png" width="230"><br><sub>Gemini</sub></td><td align="center"><img src="examples/gallery/expl-gemini-2.png" width="230"><br><sub>Gemini</sub></td></tr>
+<tr><td align="center"><img src="examples/gallery/expl-chatgpt-1.png" alt="Notion-style illustration made in ChatGPT" width="230"><br><sub>ChatGPT</sub></td><td align="center"><img src="examples/gallery/expl-gemini-1.png" alt="Notion-style illustration made in Gemini" width="230"><br><sub>Gemini</sub></td><td align="center"><img src="examples/gallery/expl-gemini-2.png" alt="Notion-style illustration made in Gemini" width="230"><br><sub>Gemini</sub></td></tr>
 </table>
 
 ---
 
-## Prompts
+## Prompts: how to generate Notion-style illustrations
 
 Self-contained — paste into **ChatGPT, Gemini or Claude** with no skill installed.
 
